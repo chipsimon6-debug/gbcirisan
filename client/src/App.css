@@ -1,0 +1,630 @@
+.app-shell {
+  width: min(1280px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 28px 0 64px;
+}
+
+.site-header {
+  position: sticky;
+  top: 20px;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 18px 24px;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 18px;
+  background: rgba(15, 31, 53, 0.62);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: 0 18px 40px rgba(12, 20, 31, 0.16);
+}
+
+.brand-block {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  min-width: 0;
+}
+
+.brand-mark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #d4b07a, #b8894a);
+  color: #fff;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+.brand-name {
+  margin: 0;
+  color: #f5f4ef;
+  font-size: 1.02rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.brand-tag {
+  display: block;
+  color: rgba(240, 232, 220, 0.8);
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.main-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: rgba(248, 245, 240, 0.8);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  padding: 10px 14px;
+  border-radius: 999px;
+  transition: all 0.2s ease;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  background: rgba(255, 255, 255, 0.12);
+  color: #fff;
+}
+
+.page-content {
+  padding-top: 28px;
+}
+
+.hero-banner {
+  position: relative;
+  min-height: 680px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 26px;
+  padding: 62px 42px 36px;
+  overflow: hidden;
+  border-radius: 32px;
+  background:
+    linear-gradient(110deg, rgba(10, 20, 32, 0.8), rgba(16, 35, 54, 0.35)),
+    url('https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+  box-shadow: 0 30px 60px rgba(15, 29, 42, 0.2);
+}
+
+@media (min-width: 961px) {
+  .site-header {
+    margin: 0 auto;
+    max-width: 1280px;
+  }
+}
+
+.hero-banner::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(16, 30, 44, 0.18), rgba(10, 18, 28, 0.7));
+}
+
+.hero-banner__content,
+.hero-banner__info {
+  position: relative;
+  z-index: 1;
+}
+
+.hero-banner__content {
+  max-width: 700px;
+}
+
+.hero-banner__info {
+  display: grid;
+  gap: 14px;
+  width: min(100%, 320px);
+}
+
+.hero-banner__card {
+  padding: 20px 18px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  backdrop-filter: blur(8px);
+}
+
+.hero-banner__card span {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(246, 230, 203, 0.85);
+}
+
+.hero-banner__card strong {
+  font-size: 1.2rem;
+  color: #fff;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  padding: 72px 58px 52px;
+  max-width: 760px;
+}
+
+.eyebrow {
+  margin: 0 0 14px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #b28a4b;
+}
+
+.eyebrow.light {
+  color: rgba(245, 229, 200, 0.9);
+}
+
+.hero-content h1 {
+  margin: 0;
+  color: #f8f5ef;
+  max-width: 620px;
+}
+
+.lead {
+  margin-top: 18px;
+  max-width: 620px;
+  font-size: 1.08rem;
+  line-height: 1.8;
+  color: rgba(244, 240, 232, 0.9);
+}
+
+.lead.light {
+  color: rgba(244, 240, 232, 0.9);
+}
+
+.verse-reference {
+  margin-top: 14px;
+  font-size: 0.9rem;
+  letter-spacing: 0.08em;
+  color: #e7d5b0;
+  text-transform: uppercase;
+}
+
+.cta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 30px;
+}
+
+.primary-btn,
+.secondary-btn,
+.text-link,
+.link-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  padding: 0.9rem 1.45rem;
+  text-decoration: none;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.primary-btn {
+  background: linear-gradient(135deg, #d4b07a, #b78750);
+  color: #101d2d;
+  box-shadow: 0 18px 35px rgba(180, 132, 78, 0.28);
+}
+
+.secondary-btn {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: #f8f5ef;
+}
+
+.primary-btn:hover,
+.secondary-btn:hover,
+.link-button:hover,
+.text-link:hover {
+  transform: translateY(-1px);
+}
+
+.content-section,
+.page-section {
+  margin-top: 30px;
+  padding: 40px 34px;
+  border-radius: 28px;
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(17, 33, 51, 0.05);
+  box-shadow: 0 20px 44px rgba(16, 27, 39, 0.04);
+}
+
+.split-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 18px;
+}
+
+.section-heading {
+  margin-bottom: 28px;
+}
+
+.section-heading.centered {
+  text-align: center;
+}
+
+.text-link {
+  padding: 0.7rem 0.9rem;
+  color: #17314e;
+  background: transparent;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.sermon-grid,
+.feature-grid,
+.ministry-grid,
+.lesson-grid {
+  display: grid;
+  gap: 22px;
+}
+
+.sermon-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.feature-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.ministry-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.sermon-card,
+.info-card,
+.ministry-card,
+.lesson-card {
+  padding: 20px;
+  border-radius: 22px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.9), rgba(247, 242, 236, 0.9));
+  border: 1px solid rgba(20, 32, 46, 0.05);
+  box-shadow: 0 22px 30px rgba(18, 30, 44, 0.04);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.sermon-card:hover,
+.info-card:hover,
+.ministry-card:hover,
+.lesson-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 24px 34px rgba(18, 30, 44, 0.08);
+}
+
+.thumbnail-art {
+  height: 160px;
+  border-radius: 18px;
+  margin-bottom: 18px;
+  background:
+    linear-gradient(140deg, rgba(16, 41, 64, 0.42), rgba(176, 130, 80, 0.26)),
+    url('https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
+}
+
+.sermon-body h3,
+.info-card h3,
+.ministry-card h3,
+.lesson-card h3 {
+  margin: 0 0 8px;
+  color: #102338;
+}
+
+.sermon-tag {
+  display: inline-block;
+  margin-bottom: 10px;
+  color: #7a5a39;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.sermon-body p,
+.info-card p,
+.ministry-card p,
+.lesson-card p,
+.story-block p {
+  color: #4e5d6c;
+  line-height: 1.7;
+}
+
+.alt-section {
+  background: linear-gradient(180deg, rgba(234, 240, 246, 0.9), rgba(255,255,255,0.8));
+}
+
+.ministry-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  margin-bottom: 18px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, rgba(17, 39, 62, 0.12), rgba(212, 176, 122, 0.2));
+  color: #16324f;
+  font-size: 1.4rem;
+}
+
+.story-block {
+  max-width: 840px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.values-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  padding: 0;
+  margin: 28px 0 0;
+}
+
+.values-list li {
+  padding: 18px 20px 18px 42px;
+  border-radius: 16px;
+  background: rgba(255,255,255,0.82);
+  border: 1px solid rgba(17, 33, 51, 0.06);
+  position: relative;
+  color: #334a63;
+}
+
+.values-list li::before {
+  content: '✦';
+  position: absolute;
+  left: 18px;
+  top: 18px;
+  color: #b78750;
+}
+
+.lesson-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.lesson-meta {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 12px;
+  color: #7a5a39;
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.link-button {
+  background: #ecdfcc;
+  color: #17314e;
+  margin-top: 18px;
+}
+
+.site-footer {
+  margin-top: 30px;
+  padding: 36px 30px 18px;
+  border-radius: 28px 28px 0 0;
+  background: linear-gradient(180deg, #12273d 0%, #0b1d2f 100%);
+  color: rgba(246, 240, 232, 0.9);
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr 1fr;
+  gap: 24px;
+  padding-bottom: 28px;
+}
+
+.footer-brand h3,
+.footer-block h4 {
+  color: #f8f4ee;
+}
+
+.footer-block h4 {
+  margin: 0 0 14px;
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: rgba(233, 212, 173, 0.8);
+}
+
+.footer-block ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 12px;
+  color: rgba(246, 240, 232, 0.9);
+}
+
+.social-links {
+  display: grid;
+  gap: 10px;
+}
+
+.social-links a,
+.footer-block p,
+.footer-brand p,
+.footer-bottom {
+  color: rgba(246, 240, 232, 0.82);
+}
+
+.social-links a {
+  text-decoration: none;
+}
+
+.map-card {
+  margin: 10px 0 18px;
+  overflow: hidden;
+  border-radius: 20px;
+  border: 1px solid rgba(255,255,255,0.12);
+}
+
+.map-card iframe {
+  display: block;
+  width: 100%;
+  height: 220px;
+  border: 0;
+}
+
+.footer-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding-top: 18px;
+  border-top: 1px solid rgba(255,255,255,0.12);
+  font-size: 0.85rem;
+}
+
+@media (max-width: 960px) {
+  .app-shell {
+    width: min(100%, calc(100% - 20px));
+  }
+
+  .site-header {
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 18px 18px 14px;
+  }
+
+  .brand-block {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .main-nav {
+    order: 3;
+    width: 100%;
+  }
+
+  .hero-banner {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-end;
+    min-height: 560px;
+    padding: 42px 24px 24px;
+  }
+
+  .hero-banner__content {
+    max-width: 100%;
+  }
+
+  .hero-banner__info {
+    width: 100%;
+    grid-template-columns: 1fr;
+  }
+
+  .sermon-grid,
+  .feature-grid,
+  .ministry-grid,
+  .lesson-grid,
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .split-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 640px) {
+  .app-shell {
+    width: min(100%, calc(100% - 16px));
+    padding-top: 12px;
+  }
+
+  .site-header {
+    top: 10px;
+    padding: 14px 14px 12px;
+    border-radius: 16px;
+  }
+
+  .brand-name {
+    font-size: 0.82rem;
+    letter-spacing: 0.06em;
+  }
+
+  .brand-tag {
+    font-size: 0.62rem;
+  }
+
+  .brand-mark {
+    width: 40px;
+    height: 40px;
+    font-size: 0.8rem;
+  }
+
+  .main-nav {
+    gap: 6px;
+  }
+
+  .nav-link {
+    font-size: 0.72rem;
+    padding: 8px 10px;
+  }
+
+  .content-section,
+  .page-section,
+  .site-footer {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  .hero-banner {
+    min-height: 500px;
+    padding: 32px 16px 18px;
+    border-radius: 22px;
+  }
+
+  .hero-banner__card {
+    padding: 16px 14px;
+  }
+
+  .hero-banner__card strong {
+    font-size: 1rem;
+  }
+
+  .cta-row {
+    flex-direction: column;
+  }
+
+  .primary-btn,
+  .secondary-btn,
+  .text-link {
+    width: 100%;
+  }
+
+  .values-list {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

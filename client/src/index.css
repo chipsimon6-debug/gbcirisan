@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700;800&display=swap');
+
+:root {
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color: #1b2a38;
+  background: #f5f0ea;
+  --navy-900: #0d1d2d;
+  --navy-800: #12273d;
+  --navy-700: #1a3550;
+  --gold-500: #d4b07a;
+  --gold-600: #b78750;
+  --cream-50: #f8f4ee;
+  --cream-100: #f1e9df;
+  --slate-600: #4e5d6c;
+  --slate-800: #1c2c38;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top, rgba(212, 176, 122, 0.18), transparent 32%),
+    linear-gradient(180deg, #f6efe7 0%, #f4ebe2 100%);
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+h1,
+h2,
+h3,
+.brand-name {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin-top: 0;
+}
+
+h1 {
+  font-size: clamp(3rem, 5vw, 5.2rem);
+  line-height: 0.94;
+  letter-spacing: -0.04em;
+  color: #1b2a38;
+}
+
+h2 {
+  font-size: clamp(2.2rem, 3vw, 3.2rem);
+  line-height: 1.05;
+  letter-spacing: -0.04em;
+  color: #142638;
+}
+
+h3 {
+  font-size: 1.6rem;
+  line-height: 1.2;
+  color: #142638;
+}
+
+p {
+  margin-bottom: 0;
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+button,
+a {
+  font: inherit;
+}
+
