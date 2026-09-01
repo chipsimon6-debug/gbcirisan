@@ -1,0 +1,9 @@
+# Allow all search engine crawlers
+User-agent: *
+Allow: /
+
+# Exclude static assets/PWA icons from indexing (optional)
+Disallow: /icons/
+
+# Point search engines directly to your sitemap
+Sitemap: https://gracebaptistchurchirisan.vercel.app/sitemap.xml

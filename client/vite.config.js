@@ -10,8 +10,8 @@ export default defineConfig({
       registerType: 'autoUpdate',
       workbox: {
         // Exclude verification files and sitemaps from SW caching/rewriting
-        navigateFallbackDenylist: [/^\/google.*\.html$/, /^\/sitemap\.xml$/],
-        globIgnores: ['google*.html', 'sitemap.xml'],
+        navigateFallbackDenylist: [/^\/robots\.txt$/, /^\/sitemap\.xml$/, /^\/google.*\.html$/],
+        globIgnores: ['robots.txt', 'sitemap.xml', 'google*.html'],
       },
       manifest: {
         name: 'Grace Baptist Church Irisan Mission',
