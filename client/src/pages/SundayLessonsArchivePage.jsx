@@ -1,47 +1,96 @@
-import { useMemo, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 
 const lessons = [
   {
-    title: 'Faith That Moves Mountains',
-    series: 'Sunday Message',
-    date: 'August 18, 2026',
-    summary: 'A reflection on trust, perseverance, and the strength of God’s promises in seasons of uncertainty.',
-    pdfUrl: '/lessons/faith-that-moves-mountains.pdf',
+    title: "The Price and Prize of God's Children Salvation",
+    series: 'Main Service',
+    date: 'June 14, 2026',
+    summary: 'A message on salvation, adoption, and the blessings of belonging to God’s family through Christ.',
+    pdfUrl: 'https://drive.google.com/file/d/1Mm8O_Dxpe4-NUxuZ1Q6k3ngVKJAbRp_S/view?usp=drive_link',
   },
   {
-    title: 'The Power of Prayer',
-    series: 'Prayer & Renewal',
-    date: 'August 11, 2026',
-    summary: 'Exploring how intentional prayer transforms our hearts, strengthens our faith, and aligns us with God’s will.',
-    pdfUrl: '/lessons/the-power-of-prayer.pdf',
+    title: "God's Children Loving Service to the Unsaved",
+    series: 'Sunday School(Adults)',
+    date: 'June 14, 2026',
+    summary: "A Sunday School lesson on Matthew 25:31-40, where Jesus compares judgment to a shepherd separating sheep from goats, tracing Christ's return as Judge, the saved's reward for serving the least of these, and the call to serve others as Christ did.",
+    pdfUrl: 'https://drive.google.com/file/d/1f3AoqdGigIbV4d21HlPH8RUzHyTYQSt6/view?usp=drive_link',
   },
   {
-    title: 'Living with Purpose',
+    title: 'The Firm Foundations of Faith, Hope and Love',
     series: 'Discipleship',
-    date: 'August 4, 2026',
-    summary: 'Learning how to live intentionally, serve faithfully, and follow Christ in everyday life.',
-    pdfUrl: '/lessons/living-with-purpose.pdf',
+    date: 'June 19, 2026',
+    summary: 'A lesson on 1 Corinthians 13:13, unpacking Faith, Hope, and Love as the lasting pillars of Christian life — with Love as the greatest, since it alone endures into eternity.',
+    pdfUrl: 'https://drive.google.com/file/d/1Y30-omQfZftSB-_6KLzrzLha1q1Kj1QH/view?usp=drive_link',
   },
   {
-    title: 'Hope in the Waiting',
-    series: 'Sunday Message',
-    date: 'July 28, 2026',
-    summary: 'Encouragement for seasons of waiting, trusting God’s timing, and finding peace in His presence.',
-    pdfUrl: '/lessons/hope-in-the-waiting.pdf',
+    title: 'Knowing the Heart of Our Father God',
+    series: 'Discipleship',
+    date: 'June 21, 2026',
+    summary: "A Father's Day message revealing three qualities of God as the perfect Heavenly Father — His constant presence, His provision through Christ, and His pardon and grace — closing with stories illustrating a father's sacrificial love.",
+    pdfUrl: 'https://drive.google.com/file/d/1YSdUAHEGeKgIU9X_h6ALHq6NGLqO-M2I/view?usp=drive_link',
   },
   {
-    title: 'The Fruit of the Spirit',
-    series: 'Bible Study',
-    date: 'July 21, 2026',
-    summary: 'A practical look at love, joy, patience, and peace as evidence of God’s work in us.',
-    pdfUrl: '/lessons/the-fruit-of-the-spirit.pdf',
+    title: 'THE DOCTRINE OF REDEMPTION and RECONCILIATION',
+    series: 'Discipleship',
+    date: 'June 28, 2026',
+    summary: "A skeletal outline explaining Redemption (the price paid to rescue us from sin's penalty) and Reconciliation (the restored relationship with God) as two inseparable, Christ-purchased truths of salvation.",
+    pdfUrl: 'https://drive.google.com/file/d/1agXRf1CkEFkVUDdxUAToQwswMBP1b_ax/view?usp=drive_link',
   },
   {
-    title: 'The Call to Serve',
-    series: 'Community',
-    date: 'July 14, 2026',
-    summary: 'Understanding how Christ’s love compels us to serve people with humility and generosity.',
-    pdfUrl: '/lessons/the-call-to-serve.pdf',
+    title: 'Faith in God That Persists Even During Struggles in Life',
+    series: 'Discipleship',
+    date: 'July 5, 2026',
+    summary: "A Sunday School lesson on Noah's faith (Hebrews 11:7, Genesis 6:9–22), outlining three marks of true faith — believing God's warning, obeying with godly fear, and receiving God's reward — with cross-references (2 Peter 3:3-7, Romans 10:17, James 2:17-18, Genesis 6:22, Romans 4:3, Ephesians 2:8-9) and applications for the reader's own life.",
+    pdfUrl: 'https://drive.google.com/file/d/1MLnSm68myWw7-bcpmxE_xWmxhKLNdklH/view?usp=drive_link',
+  },
+  {
+    title: 'The Greatest Test of Loyalty to God',
+    series: 'Discipleship',
+    date: 'July 12, 2026',
+    summary: "A lesson on Abraham's test of faith in Genesis 22:1–19, examining three foundations of loyalty to God — prompt surrender, profound steadfastness, and providential sacrifice — closing with a challenge to self-examination and a prayer of surrender.",
+    pdfUrl: 'https://drive.google.com/file/d/1zWL7MXFcym5kDkBQqM6RZ4repykjZigp/view?usp=drive_link',
+  },
+  {
+    title: 'The Power of Deception (Cheating or Lying)',
+    series: 'Discipleship',
+    date: 'July 19, 2026',
+    summary: "A message on deception rooted in Romans 15:4-5 and Proverbs 3:5-6, tracing sin's entry through Adam's disobedience, defining biblical deception, and surveying biblical examples of cheating/being cheated plus two fables, closing with a call to honesty and integrity.",
+    pdfUrl: 'https://drive.google.com/file/d/1jl5NB3o8pj_wIqcP8HixJGlgghzKBzFu/view?usp=drive_link',
+  },
+  {
+    title: 'THE SACRED SUPPER OF OUR SAVIOR',
+    series: 'Discipleship',
+    date: 'July 26, 2026',
+    summary: "A lesson on 1 Corinthians 11:23–30, structured around 3 Looks — self-examination, remembrance, and forward-looking hope — leading into the distribution of the Lord's Supper.",
+    pdfUrl: 'https://drive.google.com/file/d/1Ly82i5P3Yz7Q-N1L4Vq64jAhSEjPeWY9/view?usp=drive_link',
+  },
+  {
+    title: 'The Story of Comparisons',
+    series: 'Discipleship',
+    date: 'July 26, 2026',
+    summary: "Sermon on Romans 5:12–21 contrasting Adam and Christ as Two Representatives — structured around the Problem (inherited sin), the Penalty (reign of death), and the Provision (abounding grace) — concluding with an invitation to receive salvation.",
+    pdfUrl: 'https://drive.google.com/file/d/1ea-TfmWBHSw4cElJf8uwhdkVxMbk-xdF/view?usp=drive_link',
+  },
+  {
+    title: "God's Design of Salvation — From Destiny to Glory",
+    series: 'Discipleship',
+    date: 'August 2, 2026',
+    summary: "A message on God's full plan of salvation in three points — Predestined Purpose, Providential Perseverance, and Perfect Presentation — closing with assurance that a believer's past, present, and future are all secured in God's plan.",
+    pdfUrl: 'https://drive.google.com/file/d/1ea-TfmWBHSw4cElJf8uwhdkVxMbk-xdF/view?usp=drive_link',
+  },
+  {
+    title: 'The Purposeful Plan of God',
+    series: 'Discipleship',
+    date: 'August 9, 2026',
+    summary: "The lesson unpacks Ecclesiastes 3:9–14 in three points — God's sovereign control over life's timing, the sacred contentment found in daily work as God's gift, and the eternal, unchanging nature of His plans — closing with a call to trust God's timing and rest in His eternal promise.",
+    pdfUrl: 'https://drive.google.com/file/d/1WSV7KEDpxUyvMtDqGVquHsy4l7p5D3uB/view?usp=drive_link',
+  },
+  {
+    title: 'The Purposeful Plan of God',
+    series: 'Discipleship',
+    date: 'August 9, 2026',
+    summary: "The lesson unpacks Ecclesiastes 3:9–14 in three points — God's sovereign control over life's timing, the sacred contentment found in daily work as God's gift, and the eternal, unchanging nature of His plans — closing with a call to trust God's timing and rest in His eternal promise.",
+    pdfUrl: 'https://drive.google.com/file/d/1WSV7KEDpxUyvMtDqGVquHsy4l7p5D3uB/view?usp=drive_link',
   },
 ]
 
@@ -65,11 +114,18 @@ function SundayLessonsArchivePage() {
   }, [searchTerm])
 
   const totalPages = Math.max(1, Math.ceil(filteredLessons.length / LESSONS_PER_PAGE))
+  const effectivePage = Math.min(Math.max(currentPage || 1, 1), totalPages)
+
+  useEffect(() => {
+    if (currentPage !== effectivePage) {
+      setCurrentPage(effectivePage)
+    }
+  }, [currentPage, effectivePage])
 
   const paginatedLessons = useMemo(() => {
-    const startIndex = (currentPage - 1) * LESSONS_PER_PAGE
+    const startIndex = (effectivePage - 1) * LESSONS_PER_PAGE
     return filteredLessons.slice(startIndex, startIndex + LESSONS_PER_PAGE)
-  }, [currentPage, filteredLessons])
+  }, [effectivePage, filteredLessons])
 
   const handleSearchChange = (value) => {
     setSearchTerm(value)
@@ -129,20 +185,20 @@ function SundayLessonsArchivePage() {
                 type="button"
                 className="pagination-btn"
                 onClick={() => setCurrentPage((page) => Math.max(1, page - 1))}
-                disabled={currentPage === 1}
+                disabled={effectivePage === 1}
               >
                 Previous
               </button>
 
               <span className="pagination-status">
-                Page {currentPage} of {totalPages}
+                Page {effectivePage} of {totalPages}
               </span>
 
               <button
                 type="button"
                 className="pagination-btn"
                 onClick={() => setCurrentPage((page) => Math.min(totalPages, page + 1))}
-                disabled={currentPage === totalPages}
+                disabled={effectivePage === totalPages}
               >
                 Next
               </button>

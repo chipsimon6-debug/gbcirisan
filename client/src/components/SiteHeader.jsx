@@ -5,6 +5,7 @@ const navItems = [
   { label: 'About Us', href: '/about' },
   { label: 'Sunday Lessons', href: '/lessons' },
   { label: 'Salvation', href: '/salvation' },
+  { label: 'FAQ', href: '/faq' },
 ]
 
 function SiteHeader({ largeText, setLargeText }) {

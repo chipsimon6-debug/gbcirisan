@@ -10,7 +10,7 @@ function Footer() {
             sharing the gospel.
           </p>
           <div className="social-links">
-            <a href="https://facebook.com" target="_blank" rel="noreferrer">Facebook</a>
+            <a href="https://www.facebook.com/groups/1917613778449953" target="_blank" rel="noreferrer">Facebook</a>
             <a href="https://instagram.com" target="_blank" rel="noreferrer">Instagram</a>
             <a href="https://youtube.com" target="_blank" rel="noreferrer">YouTube</a>
           </div>

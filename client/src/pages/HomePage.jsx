@@ -34,21 +34,21 @@ const sermons = [
     tag: 'Sunday Message',
     speaker: 'Pastor L. Gonzales',
     date: 'May 26',
-    image: 'https://images.unsplash.com/photo-1507692049790-de58290a4334?auto=format&fit=crop&w=900&q=80',
+    image: 'https://images.unsplash.com/photo-1516979187457-637abb4f9353?auto=format&fit=crop&w=900&q=80',
   },
   {
     title: 'Growing in Grace',
     tag: 'Series: Spiritual Formation',
     speaker: 'Teacher Team',
     date: 'May 19',
-    image: 'https://images.unsplash.com/photo-1507692049790-de58290a4334?auto=format&fit=crop&w=900&q=80',
+    image: 'https://images.unsplash.com/photo-1516979187457-637abb4f9353?auto=format&fit=crop&w=900&q=80',
   },
   {
     title: 'Living with Purpose',
     tag: 'Sunday Lessons',
     speaker: 'Ministry Leaders',
     date: 'May 12',
-    image: 'https://images.unsplash.com/photo-1507692049790-de58290a4334?auto=format&fit=crop&w=900&q=80',
+    image: 'https://images.unsplash.com/photo-1516979187457-637abb4f9353?auto=format&fit=crop&w=900&q=80',
   },
 ]
 
