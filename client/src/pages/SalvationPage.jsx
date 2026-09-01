@@ -167,6 +167,14 @@ function SalvationPage() {
             <p style={{ marginTop: '24px', fontWeight: '600', color: '#12273d', fontSize: '1.02rem' }}>
               If you prayed this prayer from your heart, according to the Bible— YOU ARE SAVED!
             </p>
+
+            <p style={{ marginTop: '24px', fontWeight: '600', color: '#12273d', fontSize: '1.02rem' }}>
+             God wants you to grow in our new faith and in knowledge of the Scriptures.  
+             Being a part of a Bible-believing Church is an essential part of spiritual growth.  
+             I would like to extend an invitation for you to come and join us at our church.  
+             Give us a call or email us at timothyjueangway@gmail.com / +63 9381295073 so that we can rejoice with you, 
+             and get you more information about your new life as a Christian.
+            </p>
           </div>
         </div>
       </section>
