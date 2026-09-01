@@ -1,36 +1,72 @@
-import { NavLink } from 'react-router-dom'
+import { useState } from 'react'
 
 const navItems = [
-  { label: 'Home', to: '/' },
-  { label: 'About Us', to: '/about' },
-  { label: 'Sunday Lessons Archive', to: '/lessons' },
+  { label: 'Home', href: '/' },
+  { label: 'About Us', href: '/about' },
+  { label: 'Sunday Lessons', href: '/lessons' },
+  { label: 'Salvation', href: '/salvation' },
 ]
 
-function SiteHeader() {
+function SiteHeader({ largeText, setLargeText }) {
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
+
   return (
-    <header className="site-header">
+    <header className={`site-header ${isMenuOpen ? 'menu-open' : ''}`}>
       <div className="brand-block">
-        <span className="brand-mark">GB</span>
+        <a href="/" className="brand-anchor" aria-label="Grace Baptist Church Irisan Mission home">
+          <img src="/gbc-logo.png" alt="Grace Baptist Church Irisan Mission logo" className="brand-logo" />
+        </a>
         <div>
-          <p className="brand-name">Grace Baptist Church</p>
+          <p className="brand-name">Grace Baptist Church <br /> Irisan Mission</p>
           <span className="brand-tag">Irisan • Baguio</span>
         </div>
       </div>
 
-      <nav className="main-nav" aria-label="Main navigation">
+      <button
+        type="button"
+        className="mobile-menu-toggle"
+        aria-label={isMenuOpen ? 'Close navigation menu' : 'Open navigation menu'}
+        aria-expanded={isMenuOpen}
+        onClick={() => setIsMenuOpen((value) => !value)}
+      >
+        <span />
+        <span />
+        <span />
+      </button>
+
+      <nav className={`main-nav ${isMenuOpen ? 'open' : ''}`} aria-label="Main navigation">
+        <button
+          type="button"
+          className="mobile-menu-close"
+          aria-label="Close navigation menu"
+          onClick={() => setIsMenuOpen(false)}
+        >
+          ×
+        </button>
+
         {navItems.map((item) => (
-          <NavLink
+          <a
             key={item.label}
-            to={item.to}
-            className={({ isActive }) =>
-              isActive ? 'nav-link active' : 'nav-link'
-            }
-            end={item.to === '/'}
+            href={item.href}
+            className="nav-link"
+            onClick={() => setIsMenuOpen(false)}
           >
             {item.label}
-          </NavLink>
+          </a>
         ))}
       </nav>
+
+      <div className="header-actions">
+        <button
+          type="button"
+          className="header-toggle"
+          onClick={() => setLargeText((value) => !value)}
+          aria-label="Toggle large text"
+          aria-pressed={largeText}
+        >
+          A+
+        </button>
+      </div>
     </header>
   )
 }

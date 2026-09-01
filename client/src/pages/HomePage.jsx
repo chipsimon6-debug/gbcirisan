@@ -1,3 +1,18 @@
+import { useEffect, useState } from 'react'
+import anniv2Photo2 from '../assets/anniv_2_photo2.jpg'
+import anniv2 from '../assets/anniv_2.jpg'
+import anniv4Photo1 from '../assets/anniv_4_photo1.jpg'
+import anniv3Photo1 from '../assets/anniv3_photo1.jpg'
+import ypInterfellowship from '../assets/yp_interfellowship_photo1.jpg'
+
+const heroSlides = [
+  { image: anniv2Photo2},
+  { image: anniv2, title: 'Gathering in faith, fellowship, and prayer.' },
+  { image: anniv4Photo1, title: 'Growing together in Christ and community.' },
+  { image: anniv3Photo1, title: 'Serving the people of Irisan with love and purpose.' },
+  { image: ypInterfellowship, title: 'Empowering the next generation to follow Jesus.' },
+]
+
 const highlights = [
   {
     title: 'Sunday Worship',
@@ -18,16 +33,43 @@ const sermons = [
     title: 'The Courage to Trust God',
     tag: 'Sunday Message',
     speaker: 'Pastor L. Gonzales',
+    date: 'May 26',
+    image: 'https://images.unsplash.com/photo-1507692049790-de58290a4334?auto=format&fit=crop&w=900&q=80',
   },
   {
     title: 'Growing in Grace',
     tag: 'Series: Spiritual Formation',
     speaker: 'Teacher Team',
+    date: 'May 19',
+    image: 'https://images.unsplash.com/photo-1507692049790-de58290a4334?auto=format&fit=crop&w=900&q=80',
   },
   {
     title: 'Living with Purpose',
     tag: 'Sunday Lessons',
     speaker: 'Ministry Leaders',
+    date: 'May 12',
+    image: 'https://images.unsplash.com/photo-1507692049790-de58290a4334?auto=format&fit=crop&w=900&q=80',
+  },
+]
+
+const events = [
+  {
+    date: 'MAY 30',
+    title: 'Community Prayer Night',
+    time: 'Thursday • 7:00 PM',
+    location: 'Main Worship Hall',
+  },
+  {
+    date: 'JUN 02',
+    title: 'Youth Fellowship',
+    time: 'Saturday • 4:00 PM',
+    location: 'Youth Center',
+  },
+  {
+    date: 'JUN 09',
+    title: 'Family Outreach Day',
+    time: 'Sunday • 10:00 AM',
+    location: 'Irisan Community',
   },
 ]
 
@@ -37,31 +79,47 @@ const ministries = [
     text: 'A vibrant place for students to belong, grow in faith, and discover purpose in Christ.',
   },
   {
-    title: 'Adult Fellowship',
+    title: 'Couples & Families',
     text: 'Encouraging discipleship, friendship, and prayer for adults at every stage of life.',
   },
   {
-    title: 'Community Outreach',
+    title: 'Outreach',
     text: 'Serving and blessing the people of Irisan through compassion, practical care, and acts of love.',
+  },
+  {
+    title: 'Choir & Worship',
+    text: 'Leading our church in heartfelt worship that magnifies Christ and strengthens our fellowship.',
   },
 ]
 
 function HomePage() {
+  const [activeSlide, setActiveSlide] = useState(0)
+
+  useEffect(() => {
+    const timer = window.setInterval(() => {
+      setActiveSlide((current) => (current + 1) % heroSlides.length)
+    }, 5000)
+
+    return () => window.clearInterval(timer)
+  }, [])
+
+  const activeHero = heroSlides[activeSlide]
+
   return (
     <>
-      <section className="hero-banner">
+      <section
+        className="hero-banner"
+        id="visit"
+        style={{
+          backgroundImage: `linear-gradient(110deg, rgba(10, 20, 32, 0.8), rgba(14, 31, 47, 0.45)), url(${activeHero.image})`,
+        }}
+      >
         <div className="hero-banner__content">
-          <p className="eyebrow light">Grace Baptist Church Irisan</p>
-          <h1>Encounter grace. Grow in faith. Live with purpose.</h1>
-          <p className="lead light">
-            A Christ-centered church family gathering in worship, prayer, and discipleship.
-          </p>
+          <p className="eyebrow light">Grace Baptist Church Irisan Mission</p>
+          <h1 className="hero-main-heading">Sharing the Gospel of Jesus Christ. To Glorify and Worship God. To Finish the Course Faithfully.</h1>
           <div className="cta-row">
-            <a href="/about" className="primary-btn">
-              Plan Your Visit
-            </a>
-            <a href="/lessons" className="secondary-btn light-btn">
-              Watch Online
+            <a href="/lessons" className="primary-btn hero-primary-btn">
+              Watch Service Online
             </a>
           </div>
         </div>
@@ -69,74 +127,184 @@ function HomePage() {
         <div className="hero-banner__info">
           <div className="hero-banner__card">
             <span>Sunday Worship</span>
-            <strong>9:00 AM</strong>
+            <strong>9:30 AM - 12:00 PM</strong>
           </div>
           <div className="hero-banner__card">
             <span>Sunday School</span>
-            <strong>8:00 AM</strong>
+            <strong>8:30 AM - 9:30 AM</strong>
           </div>
           <div className="hero-banner__card">
             <span>Prayer Meeting</span>
-            <strong>Wed • 6:30 PM</strong>
+            <strong>Saturday • 3:30 PM</strong>
+          </div>
+        </div>
+
+        <div className="hero-carousel-controls" aria-label="Hero image gallery">
+          {heroSlides.map((slide, index) => (
+            <button
+              key={slide.title}
+              type="button"
+              className={index === activeSlide ? 'hero-carousel-dot active' : 'hero-carousel-dot'}
+              aria-label={`Show slide ${index + 1}`}
+              onClick={() => setActiveSlide(index)}
+            />
+          ))}
+        </div>
+      </section>
+
+      <section className="content-section welcome-section" id="about">
+        <div className="welcome-hero">
+          <img src="/gbc-logo.png" alt="Grace Baptist Church Irisan Mission" className="welcome-logo" />
+          <h2 className="welcome-heading">YOU ARE WELCOME HERE</h2>
+          <p className="welcome-subheading">
+            Everyone is welcome here. Whether you're looking for a church family or seeking answers, our doors are open.
+          </p>
+          <div className="location-pill">GRACE BAPTIST CHURCH IRISAN MISSION · BAGUIO CITY, PHILIPPINES</div>
+        </div>
+      </section>
+
+      <section className="content-section" id="service-times">
+        <div className="section-header">
+          <div className="section-heading-block">
+            <p className="eyebrow">Gathering Times</p>
+            <h2>Worship with us this Sunday.</h2>
+          </div>
+          <a href="#visit" className="text-link">Get directions</a>
+        </div>
+
+        <div className="service-grid">
+          <div className="service-info">
+            <div className="service-row">
+              <span className="service-label">Sunday Worship</span>
+              <strong>9:30 AM - 12:00 PM</strong>
+            </div>
+            <div className="service-row">
+              <span className="service-label">Sunday School</span>
+              <strong>8:30 AM - 9:30 AM</strong>
+            </div>
+            <div className="service-row">
+              <span className="service-label">Prayer Meeting</span>
+              <strong>Saturday • 3:30 PM</strong>
+            </div>
+            <div className="service-row address-row">
+              <span className="service-label">Location</span>
+              <strong>Lower Dumpsite, Purok 17, Barangay Irisan, Baguio, 2600 Benguet</strong>
+            </div>
+          </div>
+
+          <div className="map-frame">
+            <iframe
+              title="Grace Baptist Church map"
+              src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3827.278500965031!2d120.55521007460683!3d16.410676130207758!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTbCsDI0JzM4LjQiTiAxMjDCsDMzJzI4LjAiRQ!5e0!3m2!1sen!2sph!4v1788244434031!5m2!1sen!2sph"
+              width="600"
+              height="450"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="strict-origin-when-cross-origin"
+            />
           </div>
         </div>
       </section>
 
-      <section className="content-section featured-lessons">
-        <div className="section-heading split-header">
-          <div>
-            <p className="eyebrow">Featured Message</p>
-            <h2>Sunday lessons & sermon archives</h2>
+      <section className="content-section sermon-section" id="sermons">
+        <div className="section-header">
+          <div className="section-heading-block">
+            <p className="eyebrow">Latest Teachings</p>
+            <h2>Sermons & media library</h2>
           </div>
-          <a href="/lessons" className="text-link">View all lessons</a>
+          <a href="/lessons" className="text-link">View all sermons</a>
         </div>
 
         <div className="sermon-grid">
           {sermons.map((item) => (
             <article key={item.title} className="sermon-card">
-              <div className="thumbnail-art" />
+              <div
+                className="sermon-thumb"
+                style={{
+                  backgroundImage: `linear-gradient(135deg, rgba(18, 35, 52, 0.38), rgba(180, 142, 82, 0.24)), url(${item.image})`,
+                  backgroundSize: 'cover',
+                  backgroundPosition: 'center',
+                }}
+              />
               <div className="sermon-body">
                 <span className="sermon-tag">{item.tag}</span>
                 <h3>{item.title}</h3>
                 <p>{item.speaker}</p>
+                <div className="sermon-meta">
+                  <span>{item.date}</span>
+                  <span>Romans 8:28</span>
+                </div>
               </div>
             </article>
           ))}
         </div>
       </section>
 
-      <section className="content-section">
-        <div className="section-heading centered">
-          <p className="eyebrow">Our Mission</p>
-          <h2>Building a community of worship, discipleship, and care</h2>
+      {/* <section className="content-section" id="events">
+        <div className="section-header">
+          <div className="section-heading-block">
+            <p className="eyebrow">Upcoming Events</p>
+            <h2>Gather with the community.</h2>
+          </div>
+          <a href="#visit" className="text-link">See the calendar</a>
         </div>
 
-        <div className="feature-grid">
-          {highlights.map((item) => (
-            <article key={item.title} className="info-card">
-              <h3>{item.title}</h3>
-              <p>{item.text}</p>
+        <div className="event-list">
+          {events.map((item) => (
+            <article key={item.title} className="event-item">
+              <div className="event-date">
+                <span>{item.date}</span>
+              </div>
+              <div className="event-body">
+                <h3>{item.title}</h3>
+                <p>{item.time}</p>
+                <p>{item.location}</p>
+              </div>
+              <div className="event-actions">
+                <button type="button" className="event-button primary-btn small">
+                  RSVP
+                </button>
+                <button type="button" className="event-button secondary-btn small">
+                  Details
+                </button>
+              </div>
             </article>
           ))}
         </div>
-      </section>
+      </section> */}
 
-      <section className="content-section alt-section">
-        <div className="section-heading centered">
-          <p className="eyebrow">Ministries</p>
-          <h2>Serving the people of Irisan and beyond</h2>
+      {/* <section className="content-section community-section" id="community">
+        <div className="section-header">
+          <div className="section-heading-block">
+            <p className="eyebrow">Community Groups</p>
+            <h2>Find your place to belong.</h2>
+          </div>
         </div>
 
-        <div className="ministry-grid">
+        <div className="community-grid">
           {ministries.map((item) => (
-            <article key={item.title} className="ministry-card">
-              <div className="ministry-icon">✦</div>
+            <article key={item.title} className="community-card">
+              <div className="community-icon">✦</div>
               <h3>{item.title}</h3>
               <p>{item.text}</p>
             </article>
           ))}
         </div>
-      </section>
+      </section> */}
+
+      {/* <section className="giving-banner" id="give">
+        <div className="giving-copy">
+          <p className="eyebrow light">Give</p>
+          <h2>Support the mission with generosity and transparency.</h2>
+        </div>
+
+        <div className="giving-actions">
+          <a href="#" className="primary-btn dark-btn">One-Time Gift</a>
+          <a href="#" className="secondary-btn light-btn">Monthly Giving</a>
+          <a href="#" className="secondary-btn light-btn">Missions Fund</a>
+        </div>
+      </section> */}
     </>
   )
 }

@@ -1,24 +1,43 @@
 const missionPoints = [
   {
-    title: 'Our Mission',
-    text: 'To help people encounter Jesus, grow in their faith, and live lives of purpose, compassion, and obedience.',
+    title: 'Evangelism',
+    text: 'Preaching and sharing the Gospel locally and globally to lead individuals to a personal faith in Jesus Christ.',
   },
   {
-    title: 'Our Worship',
-    text: 'We gather in worship with joyful hearts, sincere prayer, and a commitment to seeing God move among us.',
+    title: 'Discipleship',
+    text: 'Teaching believers God’s Word to conform them to Christ’s image and mature them in their faith.',
   },
   {
-    title: 'Our Community',
-    text: 'We believe in building one another up through hospitality, support, and the shared grace of Christ.',
+    title: 'Church Planting',
+    text: 'Establishing autonomous, self-governing local churches and sending out missionaries worldwide.',
+  },
+  {
+    title: 'Glorifying God',
+    text: 'Honoring God through sound biblical teaching, worship, and faithful obedience to Scripture.',
   },
 ]
 
 const values = [
-  'Biblical teaching and obedience',
-  'Prayerful dependence on God',
-  'Love, unity, and reconciliation',
-  'Service to the church and community',
-  'A welcoming environment for all',
+  {
+    title: 'Authority of the Bible',
+    text: 'The Bible is the final and sole written guide for faith, doctrine, and church practice.',
+  },
+  {
+    title: 'Believer\'s Baptism',
+    text: 'Baptism is performed strictly by full immersion for individuals who have already made a personal profession of faith in Jesus Christ, serving as an outward symbol of an inward spiritual change.',
+  },
+  {
+    title: 'The Lord\'s Supper',
+    text: 'Communion is observed as a symbolic remembrance of Christ’s broken body and shed blood, rather than a means of imparting saving grace.',
+  },
+  {
+    title: 'Local Church Autonomy',
+    text: 'Each local church governs itself independently under Christ, free from outside hierarchies, synods, or external religious control.',
+  },
+  {
+    title: 'Separation of Church and State',
+    text: 'The church and government should remain institutionally separate, protecting religious freedom.',
+  },
 ]
 
 function AboutUsPage() {
@@ -26,19 +45,14 @@ function AboutUsPage() {
     <section className="page-section">
       <div className="section-heading centered">
         <p className="eyebrow">About Us</p>
-        <h1>Rooted in faith, united in love.</h1>
+        <h1>Rooted in our Lord Jesus Christ.</h1>
       </div>
 
       <div className="story-block">
         <div>
           <p>
-            GBCIRISAN is a church family passionate about helping people know Christ,
+            GRACE BAPTIST CHURCH IRISAN MISSION is a bible believing church that focuses on helping people know who Jesus Christ is,
             grow in His truth, and live out their calling with courage and joy.
-          </p>
-          <p>
-            Whether you are new to faith or have walked with Christ for years, you are
-            welcome here. We believe God is shaping His people for worship, discipleship,
-            and service in the community around us.
           </p>
         </div>
       </div>
@@ -58,11 +72,14 @@ function AboutUsPage() {
           <h2>Principles that guide us</h2>
         </div>
 
-        <ul className="values-list">
+        <div className="values-list">
           {values.map((value) => (
-            <li key={value}>{value}</li>
+            <article key={value.title} className="principle-card">
+              <h3>{value.title}</h3>
+              <p>{value.text}</p>
+            </article>
           ))}
-        </ul>
+        </div>
       </div>
     </section>
   )

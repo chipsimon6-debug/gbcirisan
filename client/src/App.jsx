@@ -1,11 +1,12 @@
 import { BrowserRouter, Route, Routes, useLocation } from 'react-router-dom'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import './App.css'
 import Footer from './components/Footer'
 import SiteHeader from './components/SiteHeader'
 import HomePage from './pages/HomePage'
 import AboutUsPage from './pages/AboutUsPage'
 import SundayLessonsArchivePage from './pages/SundayLessonsArchivePage'
+import SalvationPage from './pages/SalvationPage'
 
 function ScrollToTop() {
   const { pathname } = useLocation()
@@ -18,18 +19,21 @@ function ScrollToTop() {
 }
 
 function App() {
+  const [largeText, setLargeText] = useState(false)
+
   return (
     <BrowserRouter>
       <ScrollToTop />
 
-      <div className="app-shell">
-        <SiteHeader />
+      <div className={largeText ? 'app-shell large-text' : 'app-shell'}>
+        <SiteHeader largeText={largeText} setLargeText={setLargeText} />
 
         <main className="page-content">
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/about" element={<AboutUsPage />} />
             <Route path="/lessons" element={<SundayLessonsArchivePage />} />
+            <Route path="/salvation" element={<SalvationPage />} />
           </Routes>
         </main>
 

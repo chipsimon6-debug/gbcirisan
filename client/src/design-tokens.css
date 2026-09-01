@@ -1,0 +1,180 @@
+/* ============================================================
+   Grace Baptist Church Irisan Mission - Design Tokens
+   CSS Custom Properties for the Design System
+   ============================================================ */
+
+:root {
+  /* Color Palette - Primary */
+  --color-navy-primary: #12273d;
+  --color-navy-dark: #11233d;
+  --color-navy-light: #0f172a;
+  --color-gold: #d4af37;
+  --color-gold-warm: #c9954b;
+  --color-gold-muted: #b78a45;
+  --color-burgundy: #8b263e;
+  --color-burgundy-dark: #6b3a48;
+
+  /* Color Palette - Backgrounds */
+  --color-bg-white: #ffffff;
+  --color-bg-light: #f8f5ef;
+  --color-bg-light-tan: #f7f2ec;
+  --color-bg-off-white: #faf8f6;
+  --color-bg-map: #edf3f7;
+  --color-bg-light-cream: #f9f9fb;
+
+  /* Color Palette - Text */
+  --color-text-light: #f8f5ef;
+  --color-text-light-secondary: #f5f4ef;
+  --color-text-light-muted: rgba(246, 240, 232, 0.9);
+  --color-text-light-dim: rgba(248, 245, 240, 0.8);
+  --color-text-dark: #13273e;
+  --color-text-dark-secondary: #12253d;
+  --color-text-body: #4e5d6c;
+  --color-text-muted: #64748b;
+  --color-text-label: #6c7d8f;
+  --color-text-eyebrow: #8b263e;
+  --color-text-gold: #7f5d39;
+
+  /* Color Palette - Borders */
+  --color-border-light: rgba(255, 255, 255, 0.22);
+  --color-border-subtle: rgba(255, 255, 255, 0.14);
+  --color-border-light-overlay: rgba(255, 255, 255, 0.12);
+  --color-border-light-underline: rgba(255, 255, 255, 0.18);
+  --color-border-dark: rgba(17, 33, 51, 0.06);
+  --color-border-dark-subtle: rgba(17, 33, 51, 0.05);
+  --color-border-dark-medium: rgba(17, 33, 51, 0.08);
+
+  /* Opacity / Overlay Colors */
+  --color-overlay-dark-heavy: rgba(10, 20, 32, 0.8);
+  --color-overlay-dark-medium: rgba(14, 31, 47, 0.45);
+  --color-overlay-dark-light: rgba(9, 15, 22, 0.68);
+  --color-overlay-dark-subtle: rgba(9, 15, 22, 0.05);
+  --color-overlay-glass: rgba(255, 255, 255, 0.08);
+  --color-overlay-glass-strong: rgba(255, 255, 255, 0.12);
+
+  /* Typography - Font Families */
+  --font-serif: Georgia, serif;
+  --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+
+  /* Typography - Font Sizes */
+  --font-size-display: clamp(2.4rem, 6vw, 4rem);
+  --font-size-h1: clamp(1.8rem, 4vw, 2.8rem);
+  --font-size-h2: 1.1rem;
+  --font-size-body-lead: 1.08rem;
+  --font-size-body: 1rem;
+  --font-size-label: 0.72rem;
+  --font-size-label-block: 0.78rem;
+  --font-size-caption: 0.7rem;
+  --font-size-eyebrow: 0.72rem;
+  --font-size-nav: 0.8rem;
+  --font-size-small: 0.68rem;
+
+  /* Typography - Font Weights */
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  /* Typography - Line Heights */
+  --line-height-tight: 1.2;
+  --line-height-normal: 1.4;
+  --line-height-relaxed: 1.6;
+  --line-height-loose: 1.8;
+  --line-height-body: 1.7;
+  --line-height-body-large: 1.9;
+
+  /* Typography - Letter Spacing */
+  --letter-spacing-tight: 0.01em;
+  --letter-spacing-normal: 0.04em;
+  --letter-spacing-medium: 0.08em;
+  --letter-spacing-wide: 0.12em;
+  --letter-spacing-wider: 0.14em;
+  --letter-spacing-widest: 0.18em;
+
+  /* Spacing - Margins & Padding */
+  --spacing-xs: 8px;
+  --spacing-sm: 14px;
+  --spacing-md: 18px;
+  --spacing-lg: 26px;
+  --spacing-xl: 30px;
+  --spacing-2xl: 40px;
+  --spacing-3xl: 62px;
+  --spacing-section: 40px;
+  --spacing-section-large: 68px;
+
+  /* Spacing - Gaps */
+  --gap-xs: 8px;
+  --gap-sm: 10px;
+  --gap-md: 14px;
+  --gap-lg: 16px;
+  --gap-xl: 18px;
+  --gap-2xl: 22px;
+  --gap-3xl: 26px;
+  --gap-4xl: 30px;
+
+  /* Border Radius */
+  --radius-button: 999px;
+  --radius-card-large: 24px;
+  --radius-card: 22px;
+  --radius-card-medium: 20px;
+  --radius-card-small: 18px;
+  --radius-input: 12px;
+  --radius-badge: 16px;
+  --radius-small: 14px;
+  --radius-xs: 8px;
+
+  /* Shadows */
+  --shadow-subtle: 0 4px 20px rgba(0, 0, 0, 0.04);
+  --shadow-standard: 0 20px 44px rgba(16, 27, 39, 0.04);
+  --shadow-elevated: 0 18px 40px rgba(12, 20, 31, 0.14);
+  --shadow-strong: 0 26px 52px rgba(15, 29, 42, 0.12);
+  --shadow-hero: 0 28px 60px rgba(15, 29, 42, 0.18);
+  --shadow-card: 0 20px 30px rgba(18, 30, 44, 0.04);
+
+  /* Transitions */
+  --transition-fast: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+  --transition-standard: all 0.2s ease;
+
+  /* Responsive Padding (Horizontal) */
+  --padding-responsive: clamp(20px, 5vw, 68px);
+  --padding-responsive-compact: clamp(20px, 4vw, 48px);
+  --padding-mobile: 18px;
+  --padding-tablet: 24px;
+
+  /* Backdrop Filter */
+  --backdrop-blur: blur(16px);
+  --backdrop-blur-subtle: blur(8px);
+
+  /* Z-Index Scale */
+  --z-sticky-header: 30;
+  --z-carousel-controls: 2;
+  --z-overlay: 1;
+}
+
+/* Large Text Accessibility Mode */
+.large-text {
+  --font-size-body-lead: 1.15rem;
+  --font-size-body: 1.08rem;
+  --font-size-label: 0.78rem;
+  --font-size-nav: 0.86rem;
+  --font-size-display: clamp(3.6rem, 6vw, 6rem);
+  --font-size-h1: clamp(2.6rem, 4vw, 3.8rem);
+}
+
+/* Dark Mode / Inverted Color Tokens (Optional for future use) */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-bg-white: #1a1a1a;
+    --color-bg-light: #2d2d2d;
+    --color-text-dark: #f0f0f0;
+    --color-text-body: #d0d0d0;
+  }
+}
+
+/* Reduced Motion Preference */
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --transition-fast: none;
+    --transition-standard: none;
+  }
+}
