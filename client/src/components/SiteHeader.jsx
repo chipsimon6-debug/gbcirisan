@@ -27,6 +27,7 @@ const navItems = [
 
 function SiteHeader({ largeText, setLargeText }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [openParent, setOpenParent] = useState(null)
 
   return (
     <header className={`site-header ${isMenuOpen ? 'menu-open' : ''}`}>
@@ -64,13 +65,22 @@ function SiteHeader({ largeText, setLargeText }) {
 
         {navItems.map((item) => {
           if (item.children) {
+            const isOpen = openParent === item.label
+
             return (
-              <div key={item.label} className="nav-dropdown">
+              <div key={item.label} className={`nav-dropdown ${isOpen ? 'mobile-open' : ''}`}>
                 <button
                   type="button"
                   className="nav-link nav-link-parent"
+                  aria-expanded={isOpen}
                   onClick={(event) => {
                     event.preventDefault()
+
+                    if (window.innerWidth <= 640) {
+                      setOpenParent((current) => (current === item.label ? null : item.label))
+                      return
+                    }
+
                     setIsMenuOpen(false)
                   }}
                 >
@@ -78,13 +88,16 @@ function SiteHeader({ largeText, setLargeText }) {
                   <span className="nav-caret" aria-hidden="true">▾</span>
                 </button>
 
-                <div className="nav-submenu" aria-label={`${item.label} submenu`}>
+                <div className={`nav-submenu ${isOpen ? 'open' : ''}`} aria-label={`${item.label} submenu`}>
                   {item.children.map((child) => (
                     <a
                       key={child.label}
                       href={child.href}
                       className="nav-sub-link"
-                      onClick={() => setIsMenuOpen(false)}
+                      onClick={() => {
+                        setIsMenuOpen(false)
+                        setOpenParent(null)
+                      }}
                     >
                       {child.label}
                     </a>

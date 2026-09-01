@@ -1876,26 +1876,28 @@
   .main-nav {
     position: fixed;
     inset: 0;
-    left: 0;
-    right: 0;
     z-index: 60;
     display: none;
-    width: 100%;
-    max-width: 100%;
+    width: 100vw;
     height: 100vh;
     flex-direction: column;
     align-items: stretch;
-    justify-content: center;
-    gap: 8px;
-    padding: 96px 18px 24px;
-    background: rgba(9, 15, 22, 0.72);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    justify-content: flex-start;
+    gap: 12px;
+    padding: 84px 16px 28px;
+    background: #091820;
     box-sizing: border-box;
+    overflow-y: auto;
   }
 
   .main-nav.open {
     display: flex;
+  }
+
+  .main-nav > * {
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0;
   }
 
   .mobile-menu-close {
@@ -1920,43 +1922,82 @@
     display: flex;
     flex-direction: column;
     width: 100%;
+    gap: 8px;
+    align-items: stretch;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
   }
 
   .nav-link {
     width: 100%;
-    padding: 18px 20px;
+    padding: 16px 18px;
     border-radius: 12px;
-    background: rgba(255, 255, 255, 0.04);
+    background: rgba(255, 255, 255, 0.06);
     border: 1px solid rgba(255, 255, 255, 0.08);
-    font-size: 1.9rem;
+    font-size: 1.15rem;
     line-height: 1.4;
-    text-align: center;
-    letter-spacing: 0.12em;
+    text-align: left;
+    letter-spacing: 0.08em;
+    box-sizing: border-box;
+    margin: 0;
+  }
+
+  .nav-link-parent {
+    justify-content: space-between;
+    text-align: left;
   }
 
   .nav-submenu {
     position: static;
-    display: flex;
+    display: none;
     opacity: 1;
     pointer-events: auto;
     transform: none;
     width: 100%;
-    margin-top: 8px;
-    padding: 8px 8px 0;
-    border: none;
+    margin: 0;
+    padding: 8px 0 0 0;
+    border-left: 2px solid rgba(255, 255, 255, 0.12);
     border-radius: 0;
     background: transparent;
     box-shadow: none;
+    gap: 10px;
+    flex-direction: column;
+    box-sizing: border-box;
+    left: 0;
+    right: 0;
+  }
+
+  .nav-dropdown.mobile-open .nav-submenu,
+  .nav-submenu.open {
+    display: flex;
+  }
+
+  .nav-dropdown:hover .nav-submenu,
+  .nav-dropdown:focus-within .nav-submenu,
+  .nav-dropdown.mobile-open .nav-submenu,
+  .nav-submenu.open {
+    opacity: 1;
+    pointer-events: auto;
+    transform: none;
+    left: 0;
+    right: 0;
+    translate: none;
   }
 
   .nav-sub-link {
-    padding: 14px 16px;
+    display: block;
+    width: 100%;
+    padding: 12px 14px;
     background: rgba(255, 255, 255, 0.04);
     border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 12px;
-    text-align: center;
-    font-size: 1.1rem;
-    letter-spacing: 0.08em;
+    border-radius: 10px;
+    text-align: left;
+    font-size: 0.88rem;
+    letter-spacing: 0.06em;
+    line-height: 1.5;
+    box-sizing: border-box;
+    margin: 0;
   }
 
   .header-cta {
@@ -1983,6 +2024,77 @@
   .hero-banner__content {
     max-width: 100%;
     padding-top: 12px;
+  }
+
+  .page-section {
+    padding: 28px 18px;
+  }
+
+  .story-block {
+    margin-bottom: 20px;
+  }
+
+  .story-block p {
+    font-size: 0.98rem;
+    line-height: 1.8;
+  }
+
+  .section-heading h1 {
+    font-size: clamp(2rem, 9vw, 3rem);
+  }
+
+  .section-heading h2 {
+    font-size: clamp(1.6rem, 7vw, 2.2rem);
+  }
+
+  .pastor-profile {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .pastor-profile__info {
+    padding: 22px 18px;
+  }
+
+  .pastor-profile__intro h2 {
+    font-size: 1.9rem;
+  }
+
+  .pastor-profile__intro p {
+    font-size: 0.96rem;
+  }
+
+  .pastor-verse {
+    margin-top: 12px;
+    padding: 20px 18px 18px;
+    font-size: 0.98rem;
+    line-height: 1.7;
+  }
+
+  .pastor-verse::before,
+  .pastor-verse::after {
+    font-size: 2.2rem;
+  }
+
+  .kids-gallery__image {
+    height: 300px;
+  }
+
+  .kids-gallery__thumbnails {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .kids-gallery__thumb img {
+    height: 90px;
+  }
+
+  .values-list {
+    grid-template-columns: 1fr;
+  }
+
+  .principle-card {
+    padding: 18px 16px 18px 40px;
   }
 
   .hero-banner__card span {
