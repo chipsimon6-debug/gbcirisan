@@ -51,8 +51,7 @@ function AboutUsPage() {
       <div className="story-block">
         <div>
           <p>
-            GRACE BAPTIST CHURCH IRISAN MISSION is a bible believing church that focuses on helping people know who Jesus Christ is,
-            grow in His truth, and live out their calling with courage and joy.
+            Built upon the solid foundation of Jesus Christ, Grace Baptist Church Irisan Mission is a Bible-believing church committed to preaching the Good News of salvation—helping people come to know Christ.
           </p>
         </div>
       </div>
