@@ -8,6 +8,11 @@ export default defineConfig({
     react(),
     VitePWA({
       registerType: 'autoUpdate',
+      workbox: {
+        // Exclude verification files and sitemaps from SW caching/rewriting
+        navigateFallbackDenylist: [/^\/google.*\.html$/, /^\/sitemap\.xml$/],
+        globIgnores: ['google*.html', 'sitemap.xml'],
+      },
       manifest: {
         name: 'Grace Baptist Church Irisan Mission',
         short_name: 'GBC Irisan',
