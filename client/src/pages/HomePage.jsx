@@ -1,16 +1,26 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState, memo } from 'react'
 import anniv2Photo2 from '../assets/anniv_2_photo2.jpg'
 import anniv2 from '../assets/anniv_2.jpg'
 import anniv4Photo1 from '../assets/anniv_4_photo1.jpg'
-import anniv3Photo1 from '../assets/anniv3_photo1.jpg'
 import ypInterfellowship from '../assets/yp_interfellowship_photo1.jpg'
+import gbcim01 from '../assets/gbcim01.jpg'
+import gbcim02 from '../assets/gbcim02.jpg'
+import gbcim03 from '../assets/gbcim03.jpg'
+import gbcim04 from '../assets/gbcim04.jpg'
+import gbcim05 from '../assets/gbcim05.jpg'
+import gbcim06 from '../assets/gbcim06.jpg'
 
 const heroSlides = [
-  { image: anniv2Photo2},
-  { image: anniv2, title: 'Gathering in faith, fellowship, and prayer.' },
-  { image: anniv4Photo1, title: 'Growing together in Christ and community.' },
-  { image: anniv3Photo1, title: 'Serving the people of Irisan with love and purpose.' },
-  { image: ypInterfellowship, title: 'Empowering the next generation to follow Jesus.' },
+  { image: anniv2Photo2 },
+  { image: anniv2 },
+  { image: anniv4Photo1 },
+  { image: ypInterfellowship },
+  { image: gbcim01 },
+  { image: gbcim02 },
+  { image: gbcim03 },
+  { image: gbcim04 },
+  { image: gbcim05 },
+  { image: gbcim06 },
 ]
 
 const highlights = [
@@ -30,24 +40,24 @@ const highlights = [
 
 const sermons = [
   {
-    title: 'The Courage to Trust God',
+    title: "The Price and Prize of God's Children Salvation",
     tag: 'Sunday Message',
-    speaker: 'Pastor L. Gonzales',
-    date: 'May 26',
+    speaker: 'Ptr. Alexander Chommog',
+    date: 'June 14, 2026',
     image: 'https://images.unsplash.com/photo-1516979187457-637abb4f9353?auto=format&fit=crop&w=900&q=80',
   },
   {
-    title: 'Growing in Grace',
-    tag: 'Series: Spiritual Formation',
-    speaker: 'Teacher Team',
-    date: 'May 19',
+    title: 'THE DOCTRINE OF REDEMPTION and RECONCILIATION',
+    tag: 'Doctrine',
+    speaker: 'Ptr. Alexander Chommog',
+    date: 'June 28, 2026',
     image: 'https://images.unsplash.com/photo-1516979187457-637abb4f9353?auto=format&fit=crop&w=900&q=80',
   },
   {
-    title: 'Living with Purpose',
-    tag: 'Sunday Lessons',
-    speaker: 'Ministry Leaders',
-    date: 'May 12',
+    title: 'The Greatest Test of Loyalty to God',
+    tag: 'Christian Living',
+    speaker: 'Ptr. Alexander Chommog',
+    date: 'July 12, 2026',
     image: 'https://images.unsplash.com/photo-1516979187457-637abb4f9353?auto=format&fit=crop&w=900&q=80',
   },
 ]
@@ -94,10 +104,40 @@ const ministries = [
 
 function HomePage() {
   const [activeSlide, setActiveSlide] = useState(0)
+  const [isFading, setIsFading] = useState(false)
+  const [imagesPreloaded, setImagesPreloaded] = useState(false)
+
+  // Preload hero images more efficiently
+  useEffect(() => {
+    const preloadImages = async () => {
+      const preloadPromises = heroSlides.map((slide) => {
+        return new Promise((resolve) => {
+          const img = new Image()
+          img.onload = resolve
+          img.onerror = resolve
+          img.src = slide.image
+        })
+      })
+      await Promise.all(preloadPromises)
+      setImagesPreloaded(true)
+    }
+
+    // Defer image preloading to avoid blocking initial render
+    if ('requestIdleCallback' in window) {
+      window.requestIdleCallback(() => preloadImages())
+    } else {
+      setTimeout(preloadImages, 100)
+    }
+  }, [])
 
   useEffect(() => {
     const timer = window.setInterval(() => {
-      setActiveSlide((current) => (current + 1) % heroSlides.length)
+      setIsFading(true)
+      const timeoutId = setTimeout(() => {
+        setActiveSlide((current) => (current + 1) % heroSlides.length)
+        setIsFading(false)
+      }, 1000)
+      return () => clearTimeout(timeoutId)
     }, 5000)
 
     return () => window.clearInterval(timer)
@@ -108,9 +148,10 @@ function HomePage() {
   return (
     <>
       <section
-        className="hero-banner"
+        className={`hero-banner has-image ${isFading ? 'fading-out' : 'fading-in'}`}
         id="visit"
         style={{
+          backgroundColor: '#0d1d2d',
           backgroundImage: `linear-gradient(110deg, rgba(10, 20, 32, 0.8), rgba(14, 31, 47, 0.45)), url(${activeHero.image})`,
         }}
       >
@@ -207,6 +248,13 @@ function HomePage() {
         </div>
       </section>
 
+      <section className="salvation-cta-section">
+        <div className="salvation-cta-content">
+          <p className="salvation-cta-question">If you died today, would you go to heaven?</p>
+          <a href="/salvation" className="primary-btn salvation-cta-btn">THE BIBLE WAY TO HEAVEN</a>
+        </div>
+      </section>
+
       <section className="content-section sermon-section" id="sermons">
         <div className="section-header">
           <div className="section-heading-block">
@@ -233,7 +281,6 @@ function HomePage() {
                 <p>{item.speaker}</p>
                 <div className="sermon-meta">
                   <span>{item.date}</span>
-                  <span>Romans 8:28</span>
                 </div>
               </div>
             </article>

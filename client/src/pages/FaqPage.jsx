@@ -20,11 +20,6 @@ const faqs = [
       'You can expect prayer, biblical preaching, worship, and a warm and welcoming church family centered on the gospel of Jesus Christ.',
   },
   {
-    question: 'Do you have Bible study or discipleship classes?',
-    answer:
-      'Yes. We hold Sunday School and discipleship teachings that help believers grow in the Word of God and live faithfully in Christ.',
-  },
-  {
     question: 'How can I contact the church?',
     answer:
       'You may contact us through the church office, social media, or the contact details listed in our footer and community pages.',

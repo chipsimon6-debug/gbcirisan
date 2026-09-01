@@ -10,9 +10,16 @@ function Footer() {
             sharing the gospel.
           </p>
           <div className="social-links">
-            <a href="https://www.facebook.com/groups/1917613778449953" target="_blank" rel="noreferrer">Facebook</a>
-            <a href="https://instagram.com" target="_blank" rel="noreferrer">Instagram</a>
-            <a href="https://youtube.com" target="_blank" rel="noreferrer">YouTube</a>
+            <a href="https://www.facebook.com/groups/1917613778449953" target="_blank" rel="noreferrer" title="Follow us on Facebook">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+              </svg>
+            </a>
+            <a href="tel:+639381295073" title="Call us">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M17.707 12.293l-5.293-5.293a1 1 0 00-1.414 0l-5.293 5.293a1 1 0 001.414 1.414L10 9.414V20a1 1 0 102 0V9.414l3.586 3.586a1 1 0 001.414-1.414zM3 3h18a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4a1 1 0 011-1z"/>
+              </svg>
+            </a>
           </div>
         </div>
 
@@ -30,6 +37,13 @@ function Footer() {
           <ul>
             <li><a href="/about">About Us</a></li>
             <li><a href="#sermons">Sermons</a></li>
+          </ul>
+        </div>
+
+        <div className="footer-block">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="tel:+639381295073">+63 9381295073</a></li>
           </ul>
         </div>
       </div>
