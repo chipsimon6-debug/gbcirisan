@@ -27,7 +27,7 @@ function Footer() {
           <h4>Service Times</h4>
           <ul>
             <li>Sunday Worship — 9:30 AM - 12:00 PM</li>
-            <li>Sunday School — 8:30 AM - 9:30 AM</li>
+            <li>Sunday School for Kids — 8:30 AM - 9:30 AM</li>
             <li>Prayer Meeting — Saturday • 3:30 PM</li>
           </ul>
         </div>
@@ -35,7 +35,8 @@ function Footer() {
         <div className="footer-block">
           <h4>Quick Links</h4>
           <ul>
-            <li><a href="/about">About Us</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/pastor">Pastor</a></li>
             <li><a href="#sermons">Sermons</a></li>
           </ul>
         </div>

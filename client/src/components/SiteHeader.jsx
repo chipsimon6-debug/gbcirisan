@@ -2,9 +2,26 @@ import { useState } from 'react'
 
 const navItems = [
   { label: 'Home', href: '/' },
-  { label: 'About Us', href: '/about' },
+  {
+    label: 'About',
+    href: '/about',
+    children: [
+      { label: 'About Us', href: '/about' },
+      { label: 'Meet Our Pastor', href: '/pastor' },
+    ],
+  },
+  {
+    label: 'Our Ministries',
+    href: '/ministries',
+    children: [
+      { label: 'Sunday School for Kids', href: '/sunday-school-for-kids' },
+      { label: 'Youngpeople Fellowship', href: '/youngpeople-fellowship' },
+      { label: 'Music Ministry', href: '/music-ministry' },
+      { label: 'Prayer Meeting', href: '/prayer-meeting' },
+    ],
+  },
   { label: 'Sunday Lessons', href: '/lessons' },
-  { label: 'Salvation', href: '/salvation' },
+  { label: 'How To Be Saved', href: '/salvation' },
   { label: 'FAQ', href: '/faq' },
 ]
 
@@ -45,16 +62,49 @@ function SiteHeader({ largeText, setLargeText }) {
           ×
         </button>
 
-        {navItems.map((item) => (
-          <a
-            key={item.label}
-            href={item.href}
-            className="nav-link"
-            onClick={() => setIsMenuOpen(false)}
-          >
-            {item.label}
-          </a>
-        ))}
+        {navItems.map((item) => {
+          if (item.children) {
+            return (
+              <div key={item.label} className="nav-dropdown">
+                <button
+                  type="button"
+                  className="nav-link nav-link-parent"
+                  onClick={(event) => {
+                    event.preventDefault()
+                    setIsMenuOpen(false)
+                  }}
+                >
+                  <span>{item.label}</span>
+                  <span className="nav-caret" aria-hidden="true">▾</span>
+                </button>
+
+                <div className="nav-submenu" aria-label={`${item.label} submenu`}>
+                  {item.children.map((child) => (
+                    <a
+                      key={child.label}
+                      href={child.href}
+                      className="nav-sub-link"
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      {child.label}
+                    </a>
+                  ))}
+                </div>
+              </div>
+            )
+          }
+
+          return (
+            <a
+              key={item.label}
+              href={item.href}
+              className="nav-link"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              {item.label}
+            </a>
+          )
+        })}
       </nav>
 
       <div className="header-actions">

@@ -7,6 +7,11 @@ import HomePage from './pages/HomePage'
 
 // Lazy load pages for better performance
 const AboutUsPage = lazy(() => import('./pages/AboutUsPage'))
+const PastorPage = lazy(() => import('./pages/PastorPage'))
+const SundaySchoolForKidsPage = lazy(() => import('./pages/SundaySchoolForKidsPage'))
+const YoungPeopleFellowshipPage = lazy(() => import('./pages/YoungPeopleFellowshipPage'))
+const MusicMinistryPage = lazy(() => import('./pages/MusicMinistryPage'))
+const PrayerMeetingPage = lazy(() => import('./pages/PrayerMeetingPage'))
 const SundayLessonsArchivePage = lazy(() => import('./pages/SundayLessonsArchivePage'))
 const SalvationPage = lazy(() => import('./pages/SalvationPage'))
 const FaqPage = lazy(() => import('./pages/FaqPage'))
@@ -40,6 +45,11 @@ function App() {
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/about" element={<Suspense fallback={<PageLoader />}><AboutUsPage /></Suspense>} />
+            <Route path="/pastor" element={<Suspense fallback={<PageLoader />}><PastorPage /></Suspense>} />
+            <Route path="/sunday-school-for-kids" element={<Suspense fallback={<PageLoader />}><SundaySchoolForKidsPage /></Suspense>} />
+            <Route path="/youngpeople-fellowship" element={<Suspense fallback={<PageLoader />}><YoungPeopleFellowshipPage /></Suspense>} />
+            <Route path="/music-ministry" element={<Suspense fallback={<PageLoader />}><MusicMinistryPage /></Suspense>} />
+            <Route path="/prayer-meeting" element={<Suspense fallback={<PageLoader />}><PrayerMeetingPage /></Suspense>} />
             <Route path="/lessons" element={<Suspense fallback={<PageLoader />}><SundayLessonsArchivePage /></Suspense>} />
             <Route path="/salvation" element={<Suspense fallback={<PageLoader />}><SalvationPage /></Suspense>} />
             <Route path="/faq" element={<Suspense fallback={<PageLoader />}><FaqPage /></Suspense>} />

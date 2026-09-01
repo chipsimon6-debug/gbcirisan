@@ -165,21 +165,6 @@ function HomePage() {
           </div>
         </div>
 
-        <div className="hero-banner__info">
-          <div className="hero-banner__card">
-            <span>Sunday Worship</span>
-            <strong>9:30 AM - 12:00 PM</strong>
-          </div>
-          <div className="hero-banner__card">
-            <span>Sunday School</span>
-            <strong>8:30 AM - 9:30 AM</strong>
-          </div>
-          <div className="hero-banner__card">
-            <span>Prayer Meeting</span>
-            <strong>Saturday • 3:30 PM</strong>
-          </div>
-        </div>
-
         <div className="hero-carousel-controls" aria-label="Hero image gallery">
           {heroSlides.map((slide, index) => (
             <button
@@ -220,7 +205,7 @@ function HomePage() {
               <strong>9:30 AM - 12:00 PM</strong>
             </div>
             <div className="service-row">
-              <span className="service-label">Sunday School</span>
+              <span className="service-label">Sunday School for Kids</span>
               <strong>8:30 AM - 9:30 AM</strong>
             </div>
             <div className="service-row">
@@ -250,7 +235,10 @@ function HomePage() {
 
       <section className="salvation-cta-section">
         <div className="salvation-cta-content">
-          <p className="salvation-cta-question">If you died today, would you go to heaven?</p>
+          <p className="salvation-cta-question">If you died today, where would you go?</p>
+          <p className="salvation-cta-subtext">
+            Eternity is not a matter to leave to chance. Discover the hope, peace, and certainty of salvation in Jesus Christ.
+          </p>
           <a href="/salvation" className="primary-btn salvation-cta-btn">THE BIBLE WAY TO HEAVEN</a>
         </div>
       </section>
