@@ -31,33 +31,45 @@ function ScrollToTop() {
   return null
 }
 
-function App() {
-  const [largeText, setLargeText] = useState(false)
+function AppContent({ largeText, setLargeText }) {
+  const location = useLocation()
 
   return (
-    <BrowserRouter>
+    <>
       <ScrollToTop />
 
       <div className={largeText ? 'app-shell large-text' : 'app-shell'}>
         <SiteHeader largeText={largeText} setLargeText={setLargeText} />
 
         <main className="page-content">
-          <Routes>
-            <Route path="/" element={<HomePage />} />
-            <Route path="/about" element={<Suspense fallback={<PageLoader />}><AboutUsPage /></Suspense>} />
-            <Route path="/pastor" element={<Suspense fallback={<PageLoader />}><PastorPage /></Suspense>} />
-            <Route path="/sunday-school-for-kids" element={<Suspense fallback={<PageLoader />}><SundaySchoolForKidsPage /></Suspense>} />
-            <Route path="/youngpeople-fellowship" element={<Suspense fallback={<PageLoader />}><YoungPeopleFellowshipPage /></Suspense>} />
-            <Route path="/music-ministry" element={<Suspense fallback={<PageLoader />}><MusicMinistryPage /></Suspense>} />
-            <Route path="/prayer-meeting" element={<Suspense fallback={<PageLoader />}><PrayerMeetingPage /></Suspense>} />
-            <Route path="/lessons" element={<Suspense fallback={<PageLoader />}><SundayLessonsArchivePage /></Suspense>} />
-            <Route path="/salvation" element={<Suspense fallback={<PageLoader />}><SalvationPage /></Suspense>} />
-            <Route path="/faq" element={<Suspense fallback={<PageLoader />}><FaqPage /></Suspense>} />
-          </Routes>
+          <div key={location.pathname} className="page-transition">
+            <Routes>
+              <Route path="/" element={<HomePage />} />
+              <Route path="/about" element={<Suspense fallback={<PageLoader />}><AboutUsPage /></Suspense>} />
+              <Route path="/pastor" element={<Suspense fallback={<PageLoader />}><PastorPage /></Suspense>} />
+              <Route path="/sunday-school-for-kids" element={<Suspense fallback={<PageLoader />}><SundaySchoolForKidsPage /></Suspense>} />
+              <Route path="/youngpeople-fellowship" element={<Suspense fallback={<PageLoader />}><YoungPeopleFellowshipPage /></Suspense>} />
+              <Route path="/music-ministry" element={<Suspense fallback={<PageLoader />}><MusicMinistryPage /></Suspense>} />
+              <Route path="/prayer-meeting" element={<Suspense fallback={<PageLoader />}><PrayerMeetingPage /></Suspense>} />
+              <Route path="/lessons" element={<Suspense fallback={<PageLoader />}><SundayLessonsArchivePage /></Suspense>} />
+              <Route path="/salvation" element={<Suspense fallback={<PageLoader />}><SalvationPage /></Suspense>} />
+              <Route path="/faq" element={<Suspense fallback={<PageLoader />}><FaqPage /></Suspense>} />
+            </Routes>
+          </div>
         </main>
 
         <Footer />
       </div>
+    </>
+  )
+}
+
+function App() {
+  const [largeText, setLargeText] = useState(false)
+
+  return (
+    <BrowserRouter>
+      <AppContent largeText={largeText} setLargeText={setLargeText} />
     </BrowserRouter>
   )
 }

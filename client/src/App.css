@@ -46,6 +46,29 @@
   padding-top: 92px;
 }
 
+.page-transition {
+  animation: page-enter 220ms ease-out both;
+  will-change: opacity, transform;
+}
+
+@keyframes page-enter {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page-transition {
+    animation: none;
+  }
+}
+
 .brand-block {
   display: flex;
   align-items: center;
@@ -1066,23 +1089,28 @@
   display: block;
   width: 100%;
   height: 520px;
-  object-fit: cover;
+  object-fit: contain;
 }
 
 .kids-gallery__thumbnails {
-  display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
+  display: flex;
   gap: 12px;
   margin-top: 16px;
+  overflow-x: auto;
+  padding: 2px 2px 8px;
+  scroll-snap-type: x proximity;
+  scrollbar-width: thin;
 }
 
 .kids-gallery__thumb {
+  flex: 0 0 180px;
   padding: 0;
   border: 2px solid transparent;
   border-radius: 14px;
   overflow: hidden;
   background: transparent;
   cursor: pointer;
+  scroll-snap-align: start;
   transition: border-color 0.2s ease, transform 0.2s ease;
 }
 
@@ -1499,18 +1527,46 @@
 }
 
 .scripture-block {
-  background: rgba(247, 242, 236, 0.6);
-  border-left: 4px solid #d4af37;
-  padding: 18px 20px;
-  border-radius: 8px;
-  margin: 16px 0;
+  position: relative;
+  margin: 24px 0;
+  padding: 26px 28px 22px 36px;
+  overflow: hidden;
+  border: 1px solid rgba(212, 175, 55, 0.32);
+  border-left: 5px solid #d4af37;
+  border-radius: 2px 18px 18px 2px;
+  background:
+    linear-gradient(135deg, rgba(255, 253, 248, 0.98), rgba(247, 241, 231, 0.96));
+  box-shadow: 12px 14px 0 rgba(139, 38, 62, 0.08), 0 18px 30px rgba(17, 30, 44, 0.08);
+}
+
+.scripture-block::before {
+  content: '\201C';
+  position: absolute;
+  top: -18px;
+  left: 10px;
+  color: rgba(139, 38, 62, 0.14);
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 7rem;
+  line-height: 1;
+  pointer-events: none;
 }
 
 .scripture-block p {
   margin: 10px 0;
-  color: #4e5d6c;
-  font-size: 0.95rem;
-  line-height: 1.7;
+  position: relative;
+  color: #12273d;
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1.18rem;
+  font-weight: 600;
+  line-height: 1.55;
+}
+
+.scripture-block strong {
+  color: #6b3a48;
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
 .scripture-block p:first-child {
@@ -2077,12 +2133,22 @@
   }
 
   .kids-gallery__image {
-    height: 300px;
+    height: min(300px, 68vw);
+    min-height: 220px;
   }
 
   .kids-gallery__thumbnails {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    display: flex;
     gap: 10px;
+    overflow-x: auto;
+    padding: 2px 2px 8px;
+    scroll-snap-type: x proximity;
+    scrollbar-width: thin;
+  }
+
+  .kids-gallery__thumb {
+    flex: 0 0 112px;
+    scroll-snap-align: start;
   }
 
   .kids-gallery__thumb img {

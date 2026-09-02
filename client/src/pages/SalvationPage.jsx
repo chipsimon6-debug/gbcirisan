@@ -120,47 +120,23 @@ function SalvationPage() {
                 </p>
               </div>
             </div>
-          </div>
 
-          <div className="story-block narrow left-aligned" style={{ marginTop: '50px', paddingTop: '30px', borderTop: '2px solid #e2e8f0' }}>
-            <h2 style={{ color: '#12273d', marginBottom: '30px' }}>
-              HOW TO RECEIVE CHRIST AS SAVIOR:
-            </h2>
-            <div className="scripture-block">
-              <p>
-                <em>"But as many as received him, to them gave he power to become the sons of God, even to them that believe on his name." (John 1:12)</em>
-              </p>
-            </div>
-
-            <div className="salvation-step">
-              <h3 style={{ color: '#12273d', marginBottom: '12px' }}>1. Admit</h3>
-              <p>
-                That you are guilty, and that your sins have separated you from God. Be willing to turn (repent) from your sins.
-              </p>
-            </div>
-
-            <div className="salvation-step">
-              <h3 style={{ color: '#12273d', marginBottom: '12px' }}>2. Believe</h3>
-              <p>
-                That Jesus Christ died on the cross to pay for your sins and is alive again from the dead.
-              </p>
-            </div>
-
-            <div className="salvation-step">
-              <h3 style={{ color: '#12273d', marginBottom: '12px' }}>3. Call</h3>
-              <p>
-                Upon Jesus to forgive your sins and come into your life as your Savior.
-              </p>
-              <p style={{ marginTop: '14px', fontWeight: '500', color: '#2f4255' }}>
-                Why wouldn't YOU receive Christ as Savior right NOW? If you want to be saved, pray this from your heart:
-              </p>
-            </div>
+            <p style={{ marginTop: '28px', fontWeight: '500', color: '#2f4255' }}>
+              Why wouldn't YOU receive Christ as Savior right NOW? If you want to be saved, pray this from your heart:
+            </p>
 
             <div className="prayer-box">
-              <p style={{ fontStyle: 'italic', lineHeight: '1.8', color: '#425465' }}>
-                Lord Jesus, I have sinned. I have broken your laws, and I'm sorry. Please forgive me.
-                I believe you died for my sins, and are alive today. Come into my heart and be my Savior.
-                I now accept you as my Savior, and trust you to get me to heaven. Thank you Jesus. Amen.
+              <p style={{ lineHeight: '1.8', color: '#425465' }}>
+                <strong>
+                  I know I have sinned and that my sin separates me from You. I am sorry for my sin. I believe Jesus died
+                  on the cross for me so my sin can be forgiven. I believe Jesus rose from the dead and is alive.
+                </strong>
+              </p>
+              <p style={{ marginTop: '18px', lineHeight: '1.8', color: '#425465' }}>
+                <strong>
+                  God, please forgive me. I ask Jesus to come into my life and be my Lord and Savior. I will obey you, follow
+                  you, and honor you.
+                </strong>
               </p>
             </div>
 
@@ -169,11 +145,100 @@ function SalvationPage() {
             </p>
 
             <p style={{ marginTop: '24px', fontWeight: '600', color: '#12273d', fontSize: '1.02rem' }}>
-             God wants you to grow in our new faith and in knowledge of the Scriptures.  
-             Being a part of a Bible-believing Church is an essential part of spiritual growth.  
-             I would like to extend an invitation for you to come and join us at our church.  
-             Give us a call or email us at timothyjueangway@gmail.com / +63 9381295073 so that we can rejoice with you, 
-             and get you more information about your new life as a Christian.
+              God wants you to grow in our new faith and in knowledge of the Scriptures. Being a part of a Bible-believing
+              Church is an essential part of spiritual growth. I would like to extend an invitation for you to come and join
+              us at our church. Give us a call or email us at timothyjueangway@gmail.com / +63 9381295073 so that we can
+              rejoice with you, and get you more information about your new life as a Christian.
+            </p>
+          </div>
+
+          <div className="story-block narrow left-aligned" style={{ marginTop: '50px', paddingTop: '30px', borderTop: '2px solid #e2e8f0' }}>
+            <h2 style={{ color: '#12273d', marginBottom: '30px' }}>
+              HOW TO RECEIVE CHRIST AS SAVIOR AND LORD:
+            </h2>
+            <div className="scripture-block">
+              <p>
+                <em>"That if thou shalt confess with thy mouth the Lord Jesus, and shalt believe in thine heart that God hath raised him from the dead, thou shalt be saved."</em>
+              </p>
+              <p>
+                <em>"For with the heart man believeth unto righteousness; and with the mouth confession is made unto salvation."</em>
+              </p>
+              <p>
+                <em>"For the scripture saith, Whosoever believeth on him shall not be ashamed."</em>
+              </p>
+              <p>
+                <em>"For there is no difference between the Jew and the Greek: for the same Lord over all is rich unto all that call upon him."</em>
+              </p>
+              <p>
+                <em>"For whosoever shall call upon the name of the Lord shall be saved."</em>
+              </p>
+              <p>— <strong>Romans 10:9-13</strong></p>
+            </div>
+
+            <div className="salvation-step">
+              <h3 style={{ color: '#12273d', marginBottom: '12px' }}>A - Admit &amp; Repent (Acknowledge sin and turn to God)</h3>
+              <p>
+                Acknowledge that you are a sinner unable to save yourself, and turn away from sin toward God in repentance.
+              </p>
+              <div className="scripture-block">
+                <p>
+                  <em>"Repent ye therefore, and be converted, that your sins may be blotted out, when the times of refreshing shall come from the presence of the Lord;"</em>
+                </p>
+                <p>— <strong>Acts 3:19</strong></p>
+              </div>
+            </div>
+
+            <div className="salvation-step">
+              <h3 style={{ color: '#12273d', marginBottom: '12px' }}>B - Believe (In Jesus as Lord and Savior)</h3>
+              <p>
+                Place your total trust in Jesus Christ—believing in His deity, His sacrificial death for your sins, His burial, and His bodily resurrection.
+              </p>
+              <div className="scripture-block">
+                <p>
+                  <em>"Believe on the Lord Jesus Christ, and thou shalt be saved, and thy house."</em>
+                </p>
+                <p>— <strong>Acts 16:31</strong></p>
+              </div>
+            </div>
+
+            <div className="salvation-step">
+              <h3 style={{ color: '#12273d', marginBottom: '12px' }}>C - Confess (Jesus as your Lord and Savior)</h3>
+              <p>
+                Confess with your mouth that Jesus Christ is your personal Lord and Savior, calling upon Him in faith.
+              </p>
+              <div className="scripture-block">
+                <p>
+                  <em>"That if thou shalt confess with thy mouth the Lord Jesus, and shalt believe in thine heart that God hath raised him from the dead, thou shalt be saved."</em>
+                </p>
+                <p>— <strong>Romans 10:9</strong></p>
+              </div>
+            </div>
+
+            <p style={{ marginTop: '28px', fontWeight: '500', color: '#2f4255' }}>
+              Why wouldn't YOU receive Christ as Savior right NOW? If you want to be saved, pray this from your heart:
+            </p>
+
+            <div className="prayer-box">
+              <p style={{ fontStyle: 'italic', lineHeight: '1.8', color: '#425465' }}>
+                Dear God,  the God of Abraham, Isaac, and Jacob, 
+                I know I have sinned and that my sin separates me from You. 
+                I am sorry for my sin. I believe Jesus died on the cross for me so my sin can be forgiven. 
+                I believe Jesus rose from the dead and is alive.
+
+                God, please forgive me. I ask Jesus to come into my life and be my Lord and Savior. 
+                I will obey you,  follow you, and honor you. In Jesus' name I pray, Amen.
+              </p>
+            </div>
+
+            <p style={{ marginTop: '24px', fontWeight: '600', color: '#12273d', fontSize: '1.02rem' }}>
+              If you prayed this prayer from your heart, according to the Bible— YOU ARE SAVED!
+            </p>
+
+            <p style={{ marginTop: '24px', fontWeight: '600', color: '#12273d', fontSize: '1.02rem' }}>
+              God wants you to grow in our new faith and in knowledge of the Scriptures. Being a part of a Bible-believing
+              Church is an essential part of spiritual growth. I would like to extend an invitation for you to come and join
+              us at our church. Give us a call or email us at timothyjueangway@gmail.com / +63 9381295073 so that we can
+              rejoice with you, and get you more information about your new life as a Christian.
             </p>
           </div>
         </div>

@@ -1,26 +1,28 @@
 import { useEffect, useState, memo } from 'react'
-import anniv2Photo2 from '../assets/anniv_2_photo2.jpg'
-import anniv2 from '../assets/anniv_2.jpg'
-import anniv4Photo1 from '../assets/anniv_4_photo1.jpg'
-import ypInterfellowship from '../assets/yp_interfellowship_photo1.jpg'
 import gbcim01 from '../assets/gbcim01.jpg'
 import gbcim02 from '../assets/gbcim02.jpg'
 import gbcim03 from '../assets/gbcim03.jpg'
 import gbcim04 from '../assets/gbcim04.jpg'
 import gbcim05 from '../assets/gbcim05.jpg'
 import gbcim06 from '../assets/gbcim06.jpg'
+import gbcim07 from '../assets/gbcim07.jpg'
+import gbcim08 from '../assets/gbcim08.jpg'
+import gbcim09 from '../assets/gbcim09.jpg'
+import gbcim10 from '../assets/gbcim10.jpg'
+import gbcim11 from '../assets/gbcim11.jpg'
 
 const heroSlides = [
-  { image: anniv2Photo2 },
-  { image: anniv2 },
-  { image: anniv4Photo1 },
-  { image: ypInterfellowship },
   { image: gbcim01 },
   { image: gbcim02 },
   { image: gbcim03 },
   { image: gbcim04 },
   { image: gbcim05 },
   { image: gbcim06 },
+  { image: gbcim07 },
+  { image: gbcim08 },
+  { image: gbcim09 },
+  { image: gbcim10 },
+  { image: gbcim11 },
 ]
 
 const highlights = [

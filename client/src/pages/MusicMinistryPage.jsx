@@ -1,8 +1,12 @@
 import { useEffect, useState } from 'react'
 import musicMinistry01 from '../assets/music_ministry01.jpg'
 import musicMinistry02 from '../assets/music-ministry02.jpg'
+import musicMinistry03 from '../assets/music-ministry03.jpg'
+import musicMinistry04 from '../assets/music-ministry04.jpeg'
+import musicMinistry05 from '../assets/music-ministry05.jpeg'
+import musicMinistry06 from '../assets/music-ministry06.jpg'
 
-const musicImages = [musicMinistry01, musicMinistry02]
+const musicImages = [musicMinistry01, musicMinistry02, musicMinistry03, musicMinistry04, musicMinistry05, musicMinistry06]
 
 function MusicMinistryPage() {
   const [activeIndex, setActiveIndex] = useState(0)

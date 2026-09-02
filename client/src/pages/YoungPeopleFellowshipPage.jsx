@@ -5,8 +5,13 @@ import ypFellowship03 from '../assets/yp-fellowship03.jpg'
 import ypFellowship04 from '../assets/yp-fellowship04.jpg'
 import ypFellowship05 from '../assets/yp-fellowship05.jpg'
 import ypFellowship06 from '../assets/yp-fellowship06.jpg'
+import ypFellowship07 from '../assets/yp-fellowship07.jpg'
+import ypFellowship08 from '../assets/yp-fellowship08.jpeg'
+import ypFellowship09 from '../assets/yp-fellowship09.jpg'
+import ypFellowship10 from '../assets/yp-fellowship10.jpg'
+import ypFellowship11 from '../assets/yp-fellowship11.jpg'
 
-const fellowshipImages = [ypFellowship01, ypFellowship02, ypFellowship03, ypFellowship04, ypFellowship05, ypFellowship06]
+const fellowshipImages = [ypFellowship01, ypFellowship02, ypFellowship03, ypFellowship04, ypFellowship05, ypFellowship06, ypFellowship07, ypFellowship08, ypFellowship09, ypFellowship10, ypFellowship11]
 
 function YoungPeopleFellowshipPage() {
   const [activeIndex, setActiveIndex] = useState(0)

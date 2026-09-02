@@ -4,8 +4,16 @@ import kids02 from '../assets/kids02.jpg'
 import kids03 from '../assets/kids03.jpg'
 import kids04 from '../assets/kids04.jpg'
 import kids05 from '../assets/kids05.jpg'
+import kids06 from '../assets/kids06.jpeg'
+import kids07 from '../assets/kids07.jpeg'
+import kids08 from '../assets/kids08.jpg'
+import kids09 from '../assets/kids09.jpeg'
+import kids10 from '../assets/kids10.jpeg'
+import kids11 from '../assets/kids11.jpeg'
+import kids12 from '../assets/kids12.jpg'
+import kids13 from '../assets/kids13.jpeg'
 
-const kidsImages = [kids01, kids02, kids03, kids04, kids05]
+const kidsImages = [kids01, kids02, kids03, kids04, kids05, kids06, kids07, kids08, kids09, kids10, kids11, kids12, kids13]
 
 function SundaySchoolForKidsPage() {
   const [activeIndex, setActiveIndex] = useState(0)
