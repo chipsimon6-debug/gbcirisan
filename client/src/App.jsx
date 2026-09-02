@@ -31,6 +31,44 @@ function ScrollToTop() {
   return null
 }
 
+function ChatbotPrompt() {
+  const [isVisible, setIsVisible] = useState(false)
+
+  useEffect(() => {
+    const timer = window.setTimeout(() => setIsVisible(true), 4000)
+    return () => window.clearTimeout(timer)
+  }, [])
+
+  function openChatbot() {
+    if (typeof window.chatbase === 'function') {
+      window.chatbase('open')
+    }
+    setIsVisible(false)
+  }
+
+  if (!isVisible) {
+    return null
+  }
+
+  return (
+    <aside className="chatbot-prompt" aria-label="Church assistant notification">
+      <button
+        className="chatbot-prompt__dismiss"
+        type="button"
+        aria-label="Dismiss chat notification"
+        onClick={() => setIsVisible(false)}
+      >
+        x
+      </button>
+      <p className="chatbot-prompt__eyebrow">Grace Baptist Church</p>
+      <p className="chatbot-prompt__message">Have a question? We are here to help.</p>
+      <button className="chatbot-prompt__action" type="button" onClick={openChatbot}>
+        Chat with us
+      </button>
+    </aside>
+  )
+}
+
 function AppContent({ largeText, setLargeText }) {
   const location = useLocation()
 
@@ -60,6 +98,7 @@ function AppContent({ largeText, setLargeText }) {
 
         <Footer />
       </div>
+      <ChatbotPrompt />
     </>
   )
 }

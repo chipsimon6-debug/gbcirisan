@@ -177,7 +177,7 @@ function SundayLessonsArchivePage() {
     <section className="page-section">
       <div className="section-heading centered">
         <p className="eyebrow">Sunday Lessons</p>
-        <h1>Past messages and teachings</h1>
+        <h1>Sermons Archive</h1>
       </div>
 
       <div className="lesson-toolbar">
