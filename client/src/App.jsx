@@ -40,8 +40,8 @@ function ChatbotPrompt() {
   }, [])
 
   function openChatbot() {
-    if (typeof window.chatbase === 'function') {
-      window.chatbase('open')
+    if (window.botpress && typeof window.botpress.open === 'function') {
+      window.botpress.open()
     }
     setIsVisible(false)
   }
@@ -51,7 +51,12 @@ function ChatbotPrompt() {
   }
 
   return (
-    <aside className="chatbot-prompt" aria-label="Church assistant notification">
+    <aside
+      className="chatbot-prompt"
+      aria-label="Church chatbot notification"
+      role="status"
+      aria-live="polite"
+    >
       <button
         className="chatbot-prompt__dismiss"
         type="button"
@@ -60,8 +65,10 @@ function ChatbotPrompt() {
       >
         x
       </button>
-      <p className="chatbot-prompt__eyebrow">Grace Baptist Church</p>
-      <p className="chatbot-prompt__message">Have a question? We are here to help.</p>
+      <p className="chatbot-prompt__eyebrow">Church chatbot</p>
+      <p className="chatbot-prompt__message">
+        Have a question? Our chatbot is ready to help.
+      </p>
       <button className="chatbot-prompt__action" type="button" onClick={openChatbot}>
         Chat with us
       </button>
