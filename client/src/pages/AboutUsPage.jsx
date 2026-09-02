@@ -8,10 +8,6 @@ const missionPoints = [
     text: 'Teaching believers God’s Word to conform them to Christ’s image and mature them in their faith.',
   },
   {
-    title: 'Church Planting',
-    text: 'Establishing autonomous, self-governing local churches and sending out missionaries worldwide.',
-  },
-  {
     title: 'Glorifying God',
     text: 'Honoring God through sound biblical teaching, worship, and faithful obedience to Scripture.',
   },
