@@ -437,12 +437,20 @@
   color: rgba(245, 229, 200, 0.9);
 }
 
+.hero-eyebrow {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  line-height: 1.4;
+}
+
 .hero-main-heading {
   margin: 0;
   max-width: 620px;
   font-size: clamp(2.5rem, 4vw, 4.9rem);
-  line-height: 1.05;
-  letter-spacing: -0.04em;
+  font-weight: 600;
+  line-height: 1.08;
+  letter-spacing: 0;
   color: #f8f5ef;
 }
 

@@ -12,7 +12,7 @@ const lessons = [
     title: "God's Children Loving Service to the Unsaved",
     series: 'Christian Living',
     date: 'June 14, 2026',
-    summary: "A Sunday School lesson on Matthew 25:31-40, where Jesus compares judgment to a shepherd separating sheep from goats, tracing Christ's return as Judge, the saved's reward for serving the least of these, and the call to serve others as Christ did.",
+    summary: "A lesson on Matthew 25:31-40, where Jesus compares judgment to a shepherd separating sheep from goats, tracing Christ's return as Judge, the saved's reward for serving the least of these, and the call to serve others as Christ did.",
     pdfUrl: 'https://drive.google.com/file/d/1f3AoqdGigIbV4d21HlPH8RUzHyTYQSt6/view?usp=drive_link',
   },
   {
@@ -33,7 +33,7 @@ const lessons = [
     title: 'THE DOCTRINE OF REDEMPTION and RECONCILIATION',
     series: 'Doctrine',
     date: 'June 28, 2026',
-    summary: "A skeletal outline explaining Redemption (the price paid to rescue us from sin's penalty) and Reconciliation (the restored relationship with God) as two inseparable, Christ-purchased truths of salvation.",
+    summary: "A message explaining Redemption (the price paid to rescue us from sin's penalty) and Reconciliation (the restored relationship with God) as two inseparable, Christ-purchased truths of salvation.",
     pdfUrl: 'https://drive.google.com/file/d/1agXRf1CkEFkVUDdxUAToQwswMBP1b_ax/view?usp=drive_link',
   },
   {
@@ -110,7 +110,7 @@ const lessons = [
     title: "The Purpose of Pleasing God",
     series: 'Christian Living',
     date: 'August 30, 2026',
-    summary: "A lesson that focuses on 1 Thessalonians 5:23 and Hebrews 4:12, explaining that people are tripartite beings — a physical body, a soul, and a spirit — and teaching that only the spirit is dead in sin and must be born again through faith in Christ, while the soul is renewed over time and the body will be glorified at the resurrection.",
+    summary: "This sermon on ROMANS 12:1 TO 6 teaches that the purpose of pleasing God is to glorify Him, and it outlines three ways to do so: by offering our bodies as living sacrifices, by renewing our minds through God's Word, and by using our spiritual gifts to serve others in love.",
     pdfUrl: 'https://drive.google.com/file/d/1ztZ097zKGE3xnFM9zRFbA1YquC-5msSf/view?usp=drive_link',
   },
 ]

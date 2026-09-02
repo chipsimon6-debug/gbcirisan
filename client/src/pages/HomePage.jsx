@@ -158,11 +158,11 @@ function HomePage() {
         }}
       >
         <div className="hero-banner__content">
-          <p className="eyebrow light">Grace Baptist Church Irisan Mission</p>
-          <h1 className="hero-main-heading">Sharing the Gospel of Jesus Christ. To Glorify and Worship God. To Finish the Course Faithfully.</h1>
+          <p className="eyebrow light hero-eyebrow">GRACE BAPTIST CHURCH • IRISAN MISSION</p>
+          <h1 className="hero-main-heading">Sharing the Gospel. Glorifying God. Finishing the Course Faithfully.</h1>
           <div className="cta-row">
             <a href="/lessons" className="primary-btn hero-primary-btn">
-              Watch Service Online
+              Explore Our Messages
             </a>
           </div>
         </div>
