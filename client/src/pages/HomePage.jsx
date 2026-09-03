@@ -1,4 +1,4 @@
-import { useEffect, useState, memo } from 'react'
+import { useEffect, useState } from 'react'
 import gbcim01 from '../assets/gbcim01.jpg'
 import gbcim02 from '../assets/gbcim02.jpg'
 import gbcim03 from '../assets/gbcim03.jpg'
@@ -12,32 +12,17 @@ import gbcim10 from '../assets/gbcim10.jpg'
 import gbcim11 from '../assets/gbcim11.jpg'
 
 const heroSlides = [
-  { image: gbcim01 },
-  { image: gbcim02 },
-  { image: gbcim03 },
-  { image: gbcim04 },
-  { image: gbcim05 },
-  { image: gbcim06 },
-  { image: gbcim07 },
-  { image: gbcim08 },
-  { image: gbcim09 },
-  { image: gbcim10 },
-  { image: gbcim11 },
-]
-
-const highlights = [
-  {
-    title: 'Sunday Worship',
-    text: 'A meaningful gathering centered on the gospel, reverent worship, and biblical teaching for every generation.',
-  },
-  {
-    title: 'Bible Teaching',
-    text: 'Thoughtful discipleship and Scripture-centered preaching that equips believers to live faithfully in Christ.',
-  },
-  {
-    title: 'Community Care',
-    text: 'A church family marked by prayer, encouragement, and practical support for people in every season of life.',
-  },
+  { image: gbcim01, alt: 'Grace Baptist Church Irisan Mission' },
+  { image: gbcim02, alt: 'Grace Baptist Church Irisan Mission' },
+  { image: gbcim03, alt: 'Grace Baptist Church Irisan Mission' },
+  { image: gbcim04, alt: 'Grace Baptist Church Irisan Mission' },
+  { image: gbcim05, alt: 'Grace Baptist Church Irisan Mission' },
+  { image: gbcim06, alt: 'Grace Baptist Church Irisan Mission' },
+  { image: gbcim07, alt: 'Grace Baptist Church Irisan Mission' },
+  { image: gbcim08, alt: 'Grace Baptist Church Irisan Mission' },
+  { image: gbcim09, alt: 'Grace Baptist Church Irisan Mission' },
+  { image: gbcim10, alt: 'Grace Baptist Church Irisan Mission' },
+  { image: gbcim11, alt: 'Grace Baptist Church Irisan Mission' },
 ]
 
 const sermons = [
@@ -64,99 +49,60 @@ const sermons = [
   },
 ]
 
-const events = [
-  {
-    date: 'MAY 30',
-    title: 'Community Prayer Night',
-    time: 'Thursday • 7:00 PM',
-    location: 'Main Worship Hall',
-  },
-  {
-    date: 'JUN 02',
-    title: 'Youth Fellowship',
-    time: 'Saturday • 4:00 PM',
-    location: 'Youth Center',
-  },
-  {
-    date: 'JUN 09',
-    title: 'Family Outreach Day',
-    time: 'Sunday • 10:00 AM',
-    location: 'Irisan Community',
-  },
-]
-
-const ministries = [
-  {
-    title: 'Youth Ministry',
-    text: 'A vibrant place for students to belong, grow in faith, and discover purpose in Christ.',
-  },
-  {
-    title: 'Couples & Families',
-    text: 'Encouraging discipleship, friendship, and prayer for adults at every stage of life.',
-  },
-  {
-    title: 'Outreach',
-    text: 'Serving and blessing the people of Irisan through compassion, practical care, and acts of love.',
-  },
-  {
-    title: 'Choir & Worship',
-    text: 'Leading our church in heartfelt worship that magnifies Christ and strengthens our fellowship.',
-  },
-]
-
 function HomePage() {
   const [activeSlide, setActiveSlide] = useState(0)
-  const [isFading, setIsFading] = useState(false)
-  const [imagesPreloaded, setImagesPreloaded] = useState(false)
 
-  // Preload hero images more efficiently
+  const goToSlide = (slideIndex) => {
+    setActiveSlide(slideIndex)
+  }
+
+  // Keep only the next image warm; the browser loads the LCP image eagerly.
   useEffect(() => {
-    const preloadImages = async () => {
-      const preloadPromises = heroSlides.map((slide) => {
-        return new Promise((resolve) => {
-          const img = new Image()
-          img.onload = resolve
-          img.onerror = resolve
-          img.src = slide.image
-        })
-      })
-      await Promise.all(preloadPromises)
-      setImagesPreloaded(true)
+    const preloadNextImage = () => {
+      const nextSlide = heroSlides[(activeSlide + 1) % heroSlides.length]
+      const image = new Image()
+      image.decoding = 'async'
+      image.src = nextSlide.image
     }
 
-    // Defer image preloading to avoid blocking initial render
     if ('requestIdleCallback' in window) {
-      window.requestIdleCallback(() => preloadImages())
+      const idleId = window.requestIdleCallback(preloadNextImage, { timeout: 1500 })
+      return () => window.cancelIdleCallback(idleId)
     } else {
-      setTimeout(preloadImages, 100)
+      const timeoutId = window.setTimeout(preloadNextImage, 100)
+      return () => window.clearTimeout(timeoutId)
     }
-  }, [])
+  }, [activeSlide])
 
   useEffect(() => {
     const timer = window.setInterval(() => {
-      setIsFading(true)
-      const timeoutId = setTimeout(() => {
+      if (document.visibilityState === 'visible') {
         setActiveSlide((current) => (current + 1) % heroSlides.length)
-        setIsFading(false)
-      }, 1000)
-      return () => clearTimeout(timeoutId)
+      }
     }, 5000)
 
     return () => window.clearInterval(timer)
   }, [])
 
-  const activeHero = heroSlides[activeSlide]
-
   return (
     <>
       <section
-        className={`hero-banner has-image ${isFading ? 'fading-out' : 'fading-in'}`}
+        className="hero-banner has-image"
         id="visit"
-        style={{
-          backgroundColor: '#0d1d2d',
-          backgroundImage: `linear-gradient(110deg, rgba(10, 20, 32, 0.8), rgba(14, 31, 47, 0.45)), url(${activeHero.image})`,
-        }}
       >
+        <div className="hero-banner__media" aria-hidden="true">
+          <picture>
+            <img
+              className="hero-banner__image"
+              src={heroSlides[activeSlide].image}
+              alt=""
+              aria-hidden="true"
+              loading="eager"
+              fetchPriority="high"
+              decoding="async"
+            />
+          </picture>
+        </div>
         <div className="hero-banner__content">
           <p className="eyebrow light hero-eyebrow">GRACE BAPTIST CHURCH • IRISAN MISSION</p>
           <h1 className="hero-main-heading">Sharing the Gospel. Glorifying God. Finishing the Course Faithfully.</h1>
@@ -170,11 +116,11 @@ function HomePage() {
         <div className="hero-carousel-controls" aria-label="Hero image gallery">
           {heroSlides.map((slide, index) => (
             <button
-              key={slide.title}
+              key={slide.image}
               type="button"
               className={index === activeSlide ? 'hero-carousel-dot active' : 'hero-carousel-dot'}
               aria-label={`Show slide ${index + 1}`}
-              onClick={() => setActiveSlide(index)}
+              onClick={() => goToSlide(index)}
             />
           ))}
         </div>

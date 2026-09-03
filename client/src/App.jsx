@@ -65,7 +65,7 @@ function ChatbotPrompt() {
       >
         x
       </button>
-      <p className="chatbot-prompt__eyebrow">Church chatbot</p>
+      <p className="chatbot-prompt__eyebrow">GBCIM Chatbot</p>
       <p className="chatbot-prompt__message">
         Have a question? Our chatbot is ready to help.
       </p>

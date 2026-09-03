@@ -440,29 +440,39 @@
   padding: 62px clamp(20px, 5vw, 68px) 34px;
   overflow: hidden;
   border-radius: 0;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
   box-shadow: 0 28px 60px rgba(15, 29, 42, 0.18);
   box-sizing: border-box;
   isolation: isolate;
-  opacity: 1;
-  transition: opacity 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  will-change: opacity;
-  transform: translateZ(0);
-}
-
-.hero-banner.fading-out {
-  opacity: 0.92;
-}
-
-.hero-banner.fading-in {
-  opacity: 1;
 }
 
 .hero-banner > * {
   position: relative;
   z-index: 1;
+}
+
+.hero-banner__media {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: #0d1d2d;
+}
+
+.hero-banner__media::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(110deg, rgba(10, 20, 32, 0.8), rgba(14, 31, 47, 0.45));
+}
+
+.hero-banner__image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  opacity: 1;
 }
 
 .hero-banner::after {
@@ -1568,6 +1578,10 @@
 .lesson-link:focus-visible {
   transform: translateY(-1px);
   box-shadow: 0 12px 20px rgba(180, 132, 78, 0.2);
+}
+.salvation-cta-btn:active {
+  transform: translateY(1px);
+  box-shadow: 0 10px 20px rgba(139, 38, 62, 0.2);
 }
 
 .empty-state {
