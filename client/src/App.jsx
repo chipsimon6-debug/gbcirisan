@@ -1,9 +1,11 @@
 import { BrowserRouter, Route, Routes, useLocation } from 'react-router-dom'
 import { useEffect, useState, lazy, Suspense } from 'react'
+import { Analytics } from '@vercel/analytics/react';
 import './App.css'
 import Footer from './components/Footer'
 import SiteHeader from './components/SiteHeader'
 import HomePage from './pages/HomePage'
+
 
 // Lazy load pages for better performance
 const AboutUsPage = lazy(() => import('./pages/AboutUsPage'))
@@ -116,6 +118,7 @@ function App() {
   return (
     <BrowserRouter>
       <AppContent largeText={largeText} setLargeText={setLargeText} />
+      <Analytics />
     </BrowserRouter>
   )
 }
