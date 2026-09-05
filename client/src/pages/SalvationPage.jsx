@@ -120,36 +120,6 @@ function SalvationPage() {
                 </p>
               </div>
             </div>
-
-            <p style={{ marginTop: '28px', fontWeight: '500', color: '#2f4255' }}>
-              Why wouldn't YOU receive Christ as Savior right NOW? If you want to be saved, pray this from your heart:
-            </p>
-
-            <div className="prayer-box">
-              <p style={{ lineHeight: '1.8', color: '#425465' }}>
-                <strong>
-                  I know I have sinned and that my sin separates me from You. I am sorry for my sin. I believe Jesus died
-                  on the cross for me so my sin can be forgiven. I believe Jesus rose from the dead and is alive.
-                </strong>
-              </p>
-              <p style={{ marginTop: '18px', lineHeight: '1.8', color: '#425465' }}>
-                <strong>
-                  God, please forgive me. I ask Jesus to come into my life and be my Lord and Savior. I will obey you, follow
-                  you, and honor you.
-                </strong>
-              </p>
-            </div>
-
-            <p style={{ marginTop: '24px', fontWeight: '600', color: '#12273d', fontSize: '1.02rem' }}>
-              If you prayed this prayer from your heart, according to the Bible— YOU ARE SAVED!
-            </p>
-
-            <p style={{ marginTop: '24px', fontWeight: '600', color: '#12273d', fontSize: '1.02rem' }}>
-              God wants you to grow in our new faith and in knowledge of the Scriptures. Being a part of a Bible-believing
-              Church is an essential part of spiritual growth. I would like to extend an invitation for you to come and join
-              us at our church. Give us a call or email us at timothyjueangway@gmail.com / +63 9381295073 so that we can
-              rejoice with you, and get you more information about your new life as a Christian.
-            </p>
           </div>
 
           <div className="story-block narrow left-aligned" style={{ marginTop: '50px', paddingTop: '30px', borderTop: '2px solid #e2e8f0' }}>
